@@ -101,7 +101,6 @@ build
 upload
 uploads
 docs
-lib
 .publish
 
 # CMS files

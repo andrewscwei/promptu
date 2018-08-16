@@ -1,3 +1,11 @@
-export { default as align } from './lib/align';
-export { default as box } from './lib/box';
-export { default as media } from './lib/media';
+const align = require(`./lib/align`);
+const box = require(`./lib/box`);
+const media = require(`./lib/media`);
+const normalize = require(`./lib/normalize`);
+
+module.exports = {
+  align,
+  box,
+  media,
+  normalize,
+};
