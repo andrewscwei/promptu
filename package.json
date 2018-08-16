@@ -1,0 +1,24 @@
+{
+  "name": "promptu",
+  "version": "0.1.0",
+  "description": "Experimental CSS-in-JS library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet :)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewscwei/promptu.git"
+  },
+  "keywords": [
+    "css",
+    "js",
+    "styled-components"
+  ],
+  "author": "Andrew Wei <andrewscwei@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewscwei/promptu/issues"
+  },
+  "homepage": "https://github.com/andrewscwei/promptu#readme"
+}
