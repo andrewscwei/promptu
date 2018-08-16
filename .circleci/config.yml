@@ -1,0 +1,94 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: node:8.11.3
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install APT packages
+          command: apt-get update -y && apt-get install jq -y
+      - restore_cache:
+          keys:
+            - dependency-cache-{{ checksum "yarn.lock" }}
+            - dependency-cache-
+      - run:
+          name: Install NPM dependencies
+          command: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - "node_modules"
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Pack
+          command: .circleci/pack.sh
+      - store_artifacts:
+          path: ~/repo/package
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/
+            - config/
+            - node_modules/
+            - scripts/
+            - app.yaml
+            - Dockerfile
+            - makefile
+            - package.json
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Test
+          command: npm test
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - deploy:
+          name: Deploy to NPM
+          command: .circleci/deploy_to_npm.sh
+
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+  build_test_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      - deploy:
+          context: test
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
