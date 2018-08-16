@@ -77,7 +77,7 @@ workflows:
             tags:
               only: /^v.*/
       - deploy:
-          context: test
+          context: npm_deployment
           requires:
             - test
           filters:
