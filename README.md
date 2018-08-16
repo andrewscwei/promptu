@@ -1,4 +1,4 @@
-# promptu
+# promptu [![CircleCI](https://circleci.com/gh/andrewscwei/promptu.svg?style=svg)](https://circleci.com/gh/andrewscwei/promptu)
 
 Experimental CSS-in-JS based on [Styled Components](https://www.styled-components.com/).
 
