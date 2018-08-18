@@ -34,6 +34,7 @@ jobs:
             - .circleci/
             - lib/
             - node_modules/
+            - utils/
             - index.js
             - package.json
   test:
