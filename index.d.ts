@@ -56,7 +56,7 @@ export interface BoxHelper {
 
 export interface FontHelper {
   face(family: string, src: string, weight?: FontWeight, style?: FontStyle): string;
-  set(family: string, size: string, weight?: FontWeight, style?: FontStyle): string;
+  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle): string;
   weights: FontWeightDict;
 }
 
