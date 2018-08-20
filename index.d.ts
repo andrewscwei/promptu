@@ -1,4 +1,4 @@
-import { toRGB, toHexString } from "./utils";
+import { css } from 'styled-components';
 
 export type Alignment = 'tl' | 'tc' | 'tr' | 'cl' | 'cc' | 'cr' | 'bl' | 'bc' | 'br';
 
@@ -46,63 +46,63 @@ export interface MediaBreakpointDict {
 }
 
 export interface AlignHelper {
-  abs(alignment?: Alignment): string;
-  fixed(alignment?: Alignment): string;
+  abs(alignment?: Alignment): typeof css;
+  fixed(alignment?: Alignment): typeof css;
 }
 
 export interface BoxHelper {
-  default(): string;
-  fill(): string;
-  cover(): string;
-  flexh(alignment?: Alignment): string;
-  flexv(alignment?: Alignment): string;
+  default(): typeof css;
+  fill(): typeof css;
+  cover(): typeof css;
+  flexh(alignment?: Alignment): typeof css;
+  flexv(alignment?: Alignment): typeof css;
 }
 
 export interface FontHelper {
-  face(family: string, src: string, weight?: FontWeight, style?: FontStyle): string;
-  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle): string;
+  face(family: string, src: string, weight?: FontWeight, style?: FontStyle): typeof css;
+  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle): typeof css;
   weights: FontWeightDict;
 }
 
 export interface MediaHelper {
   breakpoints: MediaBreakpointDict;
-  portrait(...args: any[]): string;
-  landscape(...args: any[]): string;
-  gtw(minWidth: string | number): string;
-  gtew(minWidth: string | number): string;
-  ltw(maxWidth: string | number): string;
-  ltew(maxWidth: string | number): string;
-  clampw(minWidth: string | number, maxWidth: string | number): string;
-  gth(minHeight: string | number): string;
-  gteh(minHeight: string | number): string;
-  lth(maxHeight: string | number): string;
-  lteh(maxHeight: string | number): string;
-  clamph(minHeight: string | number, maxHeight: string | number): string;
-  mobile(...args: any[]): string;
-  gtmobile(...args: any[]): string;
-  gtemobile(...args: any[]): string;
-  tablet(...args: any[]): string;
-  gttablet(...args: any[]): string;
-  gtetablet(...args: any[]): string;
-  lttablet(...args: any[]): string;
-  ltetablet(...args: any[]): string;
-  notebook(...args: any[]): string;
-  gtnotebook(...args: any[]): string;
-  gtenotebook(...args: any[]): string;
-  ltnotebook(...args: any[]): string;
-  ltenotebook(...args: any[]): string;
-  desktop(...args: any[]): string;
-  gtdesktop(...args: any[]): string;
-  gtedesktop(...args: any[]): string;
-  ltdesktop(...args: any[]): string;
-  ltedesktop(...args: any[]): string;
-  tv(...args: any[]): string;
-  lttv(...args: any[]): string;
-  ltetv(...args: any[]): string;
+  portrait: typeof css;
+  landscape: typeof css;
+  mobile: typeof css;
+  gtmobile: typeof css;
+  gtemobile: typeof css;
+  tablet: typeof css;
+  gttablet: typeof css;
+  gtetablet: typeof css;
+  lttablet: typeof css;
+  ltetablet: typeof css;
+  notebook: typeof css;
+  gtnotebook: typeof css;
+  gtenotebook: typeof css;
+  ltnotebook: typeof css;
+  ltenotebook: typeof css;
+  desktop: typeof css;
+  gtdesktop: typeof css;
+  gtedesktop: typeof css;
+  ltdesktop: typeof css;
+  ltedesktop: typeof css;
+  tv: typeof css;
+  lttv: typeof css;
+  ltetv: typeof css;
+  gtw(minWidth: string | number): typeof css;
+  gtew(minWidth: string | number): typeof css;
+  ltw(maxWidth: string | number): typeof css;
+  ltew(maxWidth: string | number): typeof css;
+  clampw(minWidth: string | number, maxWidth: string | number): typeof css;
+  gth(minHeight: string | number): typeof css;
+  gteh(minHeight: string | number): typeof css;
+  lth(maxHeight: string | number): typeof css;
+  lteh(maxHeight: string | number): typeof css;
+  clamph(minHeight: string | number, maxHeight: string | number): typeof css;
 }
 
 export interface NormalizeHelper {
-  (): string;
+  (): typeof css;
 }
 
 export interface UtilityHelper {
