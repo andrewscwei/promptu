@@ -1,5 +1,9 @@
+import { toRGB, toHexString } from "./utils";
+
 export type Alignment = 'tl' | 'tc' | 'tr' | 'cl' | 'cc' | 'cr' | 'bl' | 'bc' | 'br';
+
 export type FontStyle = 'normal' | 'italic' | 'oblique';
+
 export type FontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
 export interface FontWeightDict {
@@ -101,12 +105,19 @@ export interface NormalizeHelper {
   (): string;
 }
 
+export interface UtilityHelper {
+  toRGB(val: number): [number, number, number];
+  toHexString(val: number, prefix?: string): string;
+  parseUnit(val: number | string, defaultUnit?: string): [number, string];
+}
+
 export interface Promptu {
   align: AlignHelper;
   box: BoxHelper;
   font: FontHelper;
   media: MediaHelper;
   normalize: NormalizeHelper;
+  utils: UtilityHelper;
 }
 
 declare const promptu: Promptu;
