@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, InterpolationValue } from 'styled-components';
 
 export type Alignment = 'tl' | 'tc' | 'tr' | 'cl' | 'cc' | 'cr' | 'bl' | 'bc' | 'br';
 
@@ -46,21 +46,21 @@ export interface MediaBreakpointDict {
 }
 
 export interface AlignHelper {
-  abs(alignment?: Alignment): typeof css;
-  fixed(alignment?: Alignment): typeof css;
+  abs(alignment?: Alignment): string;
+  fixed(alignment?: Alignment): string;
 }
 
 export interface BoxHelper {
-  default(): typeof css;
-  fill(): typeof css;
-  cover(): typeof css;
-  flexh(alignment?: Alignment): typeof css;
-  flexv(alignment?: Alignment): typeof css;
+  default(): InterpolationValue[];
+  fill(): InterpolationValue[];
+  cover(): InterpolationValue[];
+  flexh(alignment?: Alignment): InterpolationValue[];
+  flexv(alignment?: Alignment): InterpolationValue[];
 }
 
 export interface FontHelper {
-  face(family: string, src: string, weight?: FontWeight, style?: FontStyle): typeof css;
-  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle): typeof css;
+  face(family: string, src: string, weight?: FontWeight, style?: FontStyle): InterpolationValue[];
+  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle): InterpolationValue[];
   weights: FontWeightDict;
 }
 
@@ -102,7 +102,7 @@ export interface MediaHelper {
 }
 
 export interface NormalizeHelper {
-  (): typeof css;
+  (): InterpolationValue[];
 }
 
 export interface UtilityHelper {
