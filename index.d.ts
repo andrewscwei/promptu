@@ -6,6 +6,10 @@ export type FontStyle = 'normal' | 'italic' | 'oblique';
 
 export type FontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
+export type LineHeight = string | number;
+
+export type LetterSpacing = string | number;
+
 export interface FontWeightDict {
   thin: 100;
   extraLight: 200;
@@ -60,7 +64,7 @@ export interface BoxHelper {
 
 export interface FontHelper {
   face(family: string, src: string, weight?: FontWeight, style?: FontStyle): InterpolationValue[];
-  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle): InterpolationValue[];
+  set(family: string, size: number | string, weight?: FontWeight, style?: FontStyle, lineHeight?: LineHeight, letterSpacing?: LetterSpacing): InterpolationValue[];
   weights: FontWeightDict;
 }
 
