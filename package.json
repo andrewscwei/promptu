@@ -1,6 +1,6 @@
 {
   "name": "promptu",
-  "version": "0.22.0",
+  "version": "0.24.0",
   "description": "Experimental CSS-in-JS library based on Styled Components",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,6 @@
   ],
   "files": [
     "lib",
-    "utils",
     "index.d.ts"
   ],
   "author": "Andrew Wei <andrewscwei@gmail.com>",

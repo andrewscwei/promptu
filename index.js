@@ -3,7 +3,7 @@ const container = require(`./lib/container`);
 const media = require(`./lib/media`);
 const normalize = require(`./lib/normalize`);
 const typography = require(`./lib/typography`);
-const utils = require(`./utils`);
+const utils = require(`./lib/utils`);
 
 module.exports = {
   align,

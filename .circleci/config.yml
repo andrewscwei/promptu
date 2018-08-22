@@ -34,7 +34,6 @@ jobs:
             - .circleci/
             - lib/
             - node_modules/
-            - utils/
             - index.d.ts
             - index.js
             - package.json

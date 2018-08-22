@@ -114,12 +114,15 @@ export interface MediaHelper {
 
 export interface NormalizeHelper {
   (): Styles;
-}
+}\
 
 export interface UtilityHelper {
-  toRGB(val: number): [number, number, number];
+  toRGBTuple(val: number | string, prefix?: string): [number, number, number];
+  toRGBString(val: number | string, prefix?: string): string;
   toHexString(val: number, prefix?: string): string;
   toHexNumber(val: string, prefix?: string): number;
+  isShortHex(val: string, prefix?: string): boolean;
+  shortToLongHex(val: string, prefix?: string): string;
   parseUnit(val: number | string, defaultUnit?: string): [number, string];
 }
 
