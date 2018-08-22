@@ -114,7 +114,7 @@ export interface MediaHelper {
 
 export interface NormalizeHelper {
   (): Styles;
-}\
+}
 
 export interface UtilityHelper {
   toRGBTuple(val: number | string, prefix?: string): [number, number, number];
