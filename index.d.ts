@@ -1,4 +1,4 @@
-import { css, InterpolationValue } from 'styled-components';
+import { css, Styles } from 'styled-components';
 
 export type Alignment = 'tl' | 'tc' | 'tr' | 'cl' | 'cc' | 'cr' | 'bl' | 'bc' | 'br';
 
@@ -57,21 +57,21 @@ export interface AlignHelper {
 }
 
 export interface ContainerHelper {
-  box(): InterpolationValue[];
-  filled(): InterpolationValue[];
-  cover(): InterpolationValue[];
-  coverImage(): InterpolationValue[];
-  coverVideo(): InterpolationValue[];
-  mask(): InterpolationValue[];
-  flexh(alignment?: Alignment): InterpolationValue[];
-  flexrh(alignment?: Alignment): InterpolationValue[];
-  flexv(alignment?: Alignment): InterpolationValue[];
-  flexrv(alignment?: Alignment): InterpolationValue[];
+  box(): Styles;
+  filled(): Styles;
+  cover(): Styles;
+  coverImage(): Styles;
+  coverVideo(): Styles;
+  mask(): Styles;
+  flexh(alignment?: Alignment): Styles;
+  flexrh(alignment?: Alignment): Styles;
+  flexv(alignment?: Alignment): Styles;
+  flexrv(alignment?: Alignment): Styles;
 }
 
 export interface TypographyHelper {
-  font(family: string, size: number | string, weight?: FontWeight, style?: FontStyle, lineHeight?: LineHeight, letterSpacing?: LetterSpacing): InterpolationValue[];
-  fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle, variant?: FontVariant): InterpolationValue[];
+  font(family: string, size: number | string, weight?: FontWeight, style?: FontStyle, lineHeight?: LineHeight, letterSpacing?: LetterSpacing, variant?: FontVariant): Styles;
+  fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle): Styles;
   fontWeights: FontWeightDict;
 }
 
@@ -113,7 +113,7 @@ export interface MediaHelper {
 }
 
 export interface NormalizeHelper {
-  (): InterpolationValue[];
+  (): Styles;
 }
 
 export interface UtilityHelper {
