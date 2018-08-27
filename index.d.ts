@@ -1,4 +1,4 @@
-import { css, Styles } from 'styled-components';
+import { Styles } from 'styled-components';
 
 export type Alignment = 'tl' | 'tc' | 'tr' | 'cl' | 'cc' | 'cr' | 'bl' | 'bc' | 'br';
 
@@ -77,39 +77,39 @@ export interface TypographyHelper {
 
 export interface MediaHelper {
   breakpoints: MediaBreakpointDict;
-  portrait: typeof css;
-  landscape: typeof css;
-  mobile: typeof css;
-  gtmobile: typeof css;
-  gtemobile: typeof css;
-  tablet: typeof css;
-  gttablet: typeof css;
-  gtetablet: typeof css;
-  lttablet: typeof css;
-  ltetablet: typeof css;
-  notebook: typeof css;
-  gtnotebook: typeof css;
-  gtenotebook: typeof css;
-  ltnotebook: typeof css;
-  ltenotebook: typeof css;
-  desktop: typeof css;
-  gtdesktop: typeof css;
-  gtedesktop: typeof css;
-  ltdesktop: typeof css;
-  ltedesktop: typeof css;
-  tv: typeof css;
-  lttv: typeof css;
-  ltetv: typeof css;
-  gtw(minWidth: string | number): typeof css;
-  gtew(minWidth: string | number): typeof css;
-  ltw(maxWidth: string | number): typeof css;
-  ltew(maxWidth: string | number): typeof css;
-  clampw(minWidth: string | number, maxWidth: string | number): typeof css;
-  gth(minHeight: string | number): typeof css;
-  gteh(minHeight: string | number): typeof css;
-  lth(maxHeight: string | number): typeof css;
-  lteh(maxHeight: string | number): typeof css;
-  clamph(minHeight: string | number, maxHeight: string | number): typeof css;
+  portrait: (...args: any[]) => Styles;
+  landscape: (...args: any[]) => Styles;
+  mobile: (...args: any[]) => Styles;
+  gtmobile: (...args: any[]) => Styles;
+  gtemobile: (...args: any[]) => Styles;
+  tablet: (...args: any[]) => Styles;
+  gttablet: (...args: any[]) => Styles;
+  gtetablet: (...args: any[]) => Styles;
+  lttablet: (...args: any[]) => Styles;
+  ltetablet: (...args: any[]) => Styles;
+  notebook: (...args: any[]) => Styles;
+  gtnotebook: (...args: any[]) => Styles;
+  gtenotebook: (...args: any[]) => Styles;
+  ltnotebook: (...args: any[]) => Styles;
+  ltenotebook: (...args: any[]) => Styles;
+  desktop: (...args: any[]) => Styles;
+  gtdesktop: (...args: any[]) => Styles;
+  gtedesktop: (...args: any[]) => Styles;
+  ltdesktop: (...args: any[]) => Styles;
+  ltedesktop: (...args: any[]) => Styles;
+  tv: (...args: any[]) => Styles;
+  lttv: (...args: any[]) => Styles;
+  ltetv: (...args: any[]) => Styles;
+  gtw(minWidth: string | number): (...args: any[]) => Styles;
+  gtew(minWidth: string | number): (...args: any[]) => Styles;
+  ltw(maxWidth: string | number): (...args: any[]) => Styles;
+  ltew(maxWidth: string | number): (...args: any[]) => Styles;
+  clampw(minWidth: string | number, maxWidth: string | number): (...args: any[]) => Styles;
+  gth(minHeight: string | number): (...args: any[]) => Styles;
+  gteh(minHeight: string | number): (...args: any[]) => Styles;
+  lth(maxHeight: string | number): (...args: any[]) => Styles;
+  lteh(maxHeight: string | number): (...args: any[]) => Styles;
+  clamph(minHeight: string | number, maxHeight: string | number): (...args: any[]) => Styles;
 }
 
 export interface NormalizeHelper {
