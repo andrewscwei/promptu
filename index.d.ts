@@ -100,6 +100,9 @@ export interface MediaHelper {
   tv: (...args: any[]) => Styles;
   lttv: (...args: any[]) => Styles;
   ltetv: (...args: any[]) => Styles;
+  gtear(aspectRatio: string): (...args: any[]) => Styles;
+  ltear(aspectRatio: string): (...args: any[]) => Styles;
+  ar(aspectRatio: string): (...args: any[]) => Styles;
   gtw(minWidth: string | number): (...args: any[]) => Styles;
   gtew(minWidth: string | number): (...args: any[]) => Styles;
   ltw(maxWidth: string | number): (...args: any[]) => Styles;
