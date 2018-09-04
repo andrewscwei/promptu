@@ -111,7 +111,7 @@
     ],
     "quotes": [
       "error",
-      "backtick"
+      "single"
     ]
   }
 }
