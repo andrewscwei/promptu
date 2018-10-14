@@ -52,26 +52,26 @@ export interface MediaBreakpointDict {
 }
 
 export interface AlignHelper {
-  abs(alignment?: Alignment): string;
-  fixed(alignment?: Alignment): string;
-  tl(): string;
-  tc(): string;
-  tr(): string;
-  cl(): string;
-  cc(): string;
-  cr(): string;
-  bl(): string;
-  bc(): string;
-  br(): string;
-  ftl(): string;
-  ftc(): string;
-  ftr(): string;
-  fcl(): string;
-  fcc(): string;
-  fcr(): string;
-  fbl(): string;
-  fbc(): string;
-  fbr(): string;
+  abs(alignment?: Alignment): Styles;
+  fixed(alignment?: Alignment): Styles;
+  tl(): Styles;
+  tc(): Styles;
+  tr(): Styles;
+  cl(): Styles;
+  cc(): Styles;
+  cr(): Styles;
+  bl(): Styles;
+  bc(): Styles;
+  br(): Styles;
+  ftl(): Styles;
+  ftc(): Styles;
+  ftr(): Styles;
+  fcl(): Styles;
+  fcc(): Styles;
+  fcr(): Styles;
+  fbl(): Styles;
+  fbc(): Styles;
+  fbr(): Styles;
 }
 
 export interface ContainerHelper {
@@ -85,6 +85,24 @@ export interface ContainerHelper {
   flexrh(alignment?: Alignment): Styles;
   flexv(alignment?: Alignment): Styles;
   flexrv(alignment?: Alignment): Styles;
+  fhtl(): Styles;
+  fhtc(): Styles;
+  fhtr(): Styles;
+  fhcl(): Styles;
+  fhcc(): Styles;
+  fhcr(): Styles;
+  fhbl(): Styles;
+  fhbc(): Styles;
+  fhbr(): Styles;
+  fvtl(): Styles;
+  fvtc(): Styles;
+  fvtr(): Styles;
+  fvcl(): Styles;
+  fvcc(): Styles;
+  fvcr(): Styles;
+  fvbl(): Styles;
+  fvbc(): Styles;
+  fvbr(): Styles;
 }
 
 export interface TypographyHelper {
