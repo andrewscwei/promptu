@@ -54,6 +54,24 @@ export interface MediaBreakpointDict {
 export interface AlignHelper {
   abs(alignment?: Alignment): string;
   fixed(alignment?: Alignment): string;
+  tl(): string;
+  tc(): string;
+  tr(): string;
+  cl(): string;
+  cc(): string;
+  cr(): string;
+  bl(): string;
+  bc(): string;
+  br(): string;
+  ftl(): string;
+  ftc(): string;
+  ftr(): string;
+  fcl(): string;
+  fcc(): string;
+  fcr(): string;
+  fbl(): string;
+  fbc(): string;
+  fbr(): string;
 }
 
 export interface ContainerHelper {
@@ -70,6 +88,9 @@ export interface ContainerHelper {
 }
 
 export interface TypographyHelper {
+  getFontFormatFromPath(path: string): string;
+  getFontStyleFromPath(path: string): string;
+  getFontWeightFromPath(path: string): number | string;
   font(family: string, size: number | string, weight?: FontWeight, style?: FontStyle, lineHeight?: LineHeight, letterSpacing?: LetterSpacing, variant?: FontVariant): Styles;
   fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle): Styles;
   fontWeights: FontWeightDict;
