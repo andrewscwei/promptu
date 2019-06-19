@@ -2,6 +2,8 @@ export type Alignment = 'tl' | 'tc' | 'tr' | 'ts' | 'cl' | 'cc' | 'cr' | 'cs' | 
 
 export type FontStyle = 'normal' | 'italic' | 'oblique';
 
+export type FontDisplay = 'auto' | 'swap' | 'block' | 'fallback' | 'optional';
+
 export type FontWeight = 'normal' | 'bold' | 'bolder' | 'lighter' | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 
 export type FontVariant = 'normal' | 'small-caps';
@@ -154,7 +156,7 @@ export interface TypographyHelper {
   getFontStyleFromPath(path: string): string;
   getFontWeightFromPath(path: string): number | string;
   font(family: string, size: number | string, weight?: FontWeight, style?: FontStyle, lineHeight?: LineHeight, letterSpacing?: LetterSpacing, variant?: FontVariant): string;
-  fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle): string;
+  fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle, display?: FontDisplay): string;
   fontWeights: FontWeightDict;
 }
 
