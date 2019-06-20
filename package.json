@@ -1,12 +1,14 @@
 {
   "name": "promptu",
-  "version": "0.37.0",
+  "version": "0.38.0",
   "description": "Experimental CSS-in-JS library",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
+    "clean": "rimraf build",
+    "build": "npm run clean && tsc",
     "test": "echo \"No tests yet :)\"",
-    "lint": "eslint . --ignore-path .gitignore && stylelint \"lib/**/*.js\"",
-    "lint:fix": "eslint . --ignore-path .gitignore --fix && stylelint \"lib/**/*.js\" --fix"
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,7 @@
     "js"
   ],
   "files": [
-    "lib",
-    "index.d.ts"
+    "build"
   ],
   "author": "Andrew Wei <andrewscwei@gmail.com>",
   "license": "MIT",
@@ -27,9 +28,10 @@
   },
   "homepage": "https://github.com/andrewscwei/promptu#readme",
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "eslint": "^5.16.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-standard": "^18.3.0"
-  }
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.2"
+  },
+  "types": "build/index.d.ts"
 }

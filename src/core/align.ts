@@ -1,4 +1,6 @@
-exports.abs = (alignment = 'cc') => {
+import { Alignment } from '../types';
+
+export function abs(alignment: Alignment = 'cc'): string {
   let t;
 
   switch (alignment) {
@@ -88,9 +90,9 @@ exports.abs = (alignment = 'cc') => {
     ${t}
     position: absolute;
   `;
-};
+}
 
-exports.fixed = (alignment = 'cc') => {
+export function fixed(alignment: Alignment = 'cc'): string {
   let t;
 
   switch (alignment) {
@@ -180,40 +182,23 @@ exports.fixed = (alignment = 'cc') => {
     ${t}
     position: fixed;
   `;
-};
+}
 
-exports.tl = exports.abs('tl');
-
-exports.tc = exports.abs('tc');
-
-exports.tr = exports.abs('tr');
-
-exports.cl = exports.abs('cl');
-
-exports.cc = exports.abs('cc');
-
-exports.cr = exports.abs('cr');
-
-exports.bl = exports.abs('bl');
-
-exports.bc = exports.abs('bc');
-
-exports.br = exports.abs('br');
-
-exports.ftl = exports.fixed('tl');
-
-exports.ftc = exports.fixed('tc');
-
-exports.ftr = exports.fixed('tr');
-
-exports.fcl = exports.fixed('cl');
-
-exports.fcc = exports.fixed('cc');
-
-exports.fcr = exports.fixed('cr');
-
-exports.fbl = exports.fixed('bl');
-
-exports.fbc = exports.fixed('bc');
-
-exports.fbr = exports.fixed('br');
+export const tl = abs('tl');
+export const tc = abs('tc');
+export const tr = abs('tr');
+export const cl = abs('cl');
+export const cc = abs('cc');
+export const cr = abs('cr');
+export const bl = abs('bl');
+export const bc = abs('bc');
+export const br = abs('br');
+export const ftl = fixed('tl');
+export const ftc = fixed('tc');
+export const ftr = fixed('tr');
+export const fcl = fixed('cl');
+export const fcc = fixed('cc');
+export const fcr = fixed('cr');
+export const fbl = fixed('bl');
+export const fbc = fixed('bc');
+export const fbr = fixed('br');

@@ -1,4 +1,4 @@
-module.exports = () => {
+export default (): string => {
   return `
     html {
       border: none;

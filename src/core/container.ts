@@ -1,19 +1,21 @@
+import { Alignment } from '../types';
+
 /**
  * Normalizes an element container.
  */
-exports.box = `
+export const box: string = `
   box-sizing: border-box;
   display: block;
 `;
 
-exports.filled = `
+export const filled: string = `
   box-sizing: border-box;
   display: block;
   height: 100%;
   width: 100%;
 `;
 
-exports.cover = `
+export const cover: string = `
   box-sizing: border-box;
   display: block;
   height: auto;
@@ -22,7 +24,7 @@ exports.cover = `
   width: 100%;
 `;
 
-exports.coverImage = `
+export const coverImage: string = `
   box-sizing: border-box;
   display: block;
   height: 100%;
@@ -30,7 +32,7 @@ exports.coverImage = `
   width: 100%;
 `;
 
-exports.coverVideo = `
+export const coverVideo: string = `
   box-sizing: border-box;
   display: block;
   height: 100%;
@@ -42,9 +44,9 @@ exports.coverVideo = `
  * Transforms an element to a flex box where the child elements are
  * horizontally aligned.
  *
- * @param alignment Alignment style of child elements.
+ * @param alignment - Alignment style of child elements.
  */
-exports.flexh = (alignment = 'cc') => {
+export function flexh(alignment: Alignment = 'cc'): string {
   let t;
 
   switch (alignment) {
@@ -158,9 +160,9 @@ exports.flexh = (alignment = 'cc') => {
  * Transforms an element to a flex box where the child elements are reverse
  * horizontally aligned.
  *
- * @param alignment Alignment style of child elements.
+ * @param alignment - Alignment style of child elements.
  */
-exports.flexrh = (alignment = 'cc') => {
+export function flexrh(alignment: Alignment = 'cc'): string {
   let t;
 
   switch (alignment) {
@@ -274,9 +276,9 @@ exports.flexrh = (alignment = 'cc') => {
  * Transforms an element to a flex box where the child elements are vertically
  * aligned.
  *
- * @param alignment Alignment style of child elements.
+ * @param alignment - Alignment style of child elements.
  */
-exports.flexv = (alignment = 'cc') => {
+export function flexv(alignment: Alignment = 'cc'): string {
   let t;
 
   switch (alignment) {
@@ -390,9 +392,9 @@ exports.flexv = (alignment = 'cc') => {
  * Transforms an element to a flex box where the child elements are vertically
  * aligned.
  *
- * @param alignment Alignment style of child elements.
+ * @param alignment - Alignment style of child elements.
  */
-exports.flexrv = (alignment = 'cc') => {
+export function flexrv(alignment: Alignment = 'cc'): string {
   let t;
 
   switch (alignment) {
@@ -502,138 +504,75 @@ exports.flexrv = (alignment = 'cc') => {
   `;
 };
 
-exports.fhtl = exports.flexh('tl');
-
-exports.fhtc = exports.flexh('tc');
-
-exports.fhtr = exports.flexh('tr');
-
-exports.fhts = exports.flexh('ts');
-
-exports.fhcl = exports.flexh('cl');
-
-exports.fhcc = exports.flexh('cc');
-
-exports.fhcr = exports.flexh('cr');
-
-exports.fhcs = exports.flexh('cs');
-
-exports.fhbl = exports.flexh('bl');
-
-exports.fhbc = exports.flexh('bc');
-
-exports.fhbr = exports.flexh('br');
-
-exports.fhbs = exports.flexh('bs');
-
-exports.fhsl = exports.flexh('sl');
-
-exports.fhsc = exports.flexh('sc');
-
-exports.fhsr = exports.flexh('sr');
-
-exports.fhss = exports.flexh('ss');
-
-exports.frhtl = exports.flexrh('tl');
-
-exports.frhtc = exports.flexrh('tc');
-
-exports.frhtr = exports.flexrh('tr');
-
-exports.frhts = exports.flexrh('ts');
-
-exports.frhcl = exports.flexrh('cl');
-
-exports.frhcc = exports.flexrh('cc');
-
-exports.frhcr = exports.flexrh('cr');
-
-exports.frhcs = exports.flexrh('cs');
-
-exports.frhbl = exports.flexrh('bl');
-
-exports.frhbc = exports.flexrh('bc');
-
-exports.frhbr = exports.flexrh('br');
-
-exports.frhbs = exports.flexrh('bs');
-
-exports.frhsl = exports.flexrh('sl');
-
-exports.frhsc = exports.flexrh('sc');
-
-exports.frhsr = exports.flexrh('sr');
-
-exports.frhss = exports.flexrh('ss');
-
-exports.fvtl = exports.flexv('tl');
-
-exports.fvtc = exports.flexv('tc');
-
-exports.fvtr = exports.flexv('tr');
-
-exports.fvts = exports.flexv('ts');
-
-exports.fvcl = exports.flexv('cl');
-
-exports.fvcc = exports.flexv('cc');
-
-exports.fvcr = exports.flexv('cr');
-
-exports.fvcs = exports.flexv('cs');
-
-exports.fvbl = exports.flexv('bl');
-
-exports.fvbc = exports.flexv('bc');
-
-exports.fvbr = exports.flexv('br');
-
-exports.fvbs = exports.flexv('bs');
-
-exports.fvsl = exports.flexv('sl');
-
-exports.fvsc = exports.flexv('sc');
-
-exports.fvsr = exports.flexv('sr');
-
-exports.fvss = exports.flexv('ss');
-
-exports.frvtl = exports.flexrv('tl');
-
-exports.frvtc = exports.flexrv('tc');
-
-exports.frvtr = exports.flexrv('tr');
-
-exports.frvts = exports.flexrv('ts');
-
-exports.frvcl = exports.flexrv('cl');
-
-exports.frvcc = exports.flexrv('cc');
-
-exports.frvcr = exports.flexrv('cr');
-
-exports.frvcs = exports.flexrv('cs');
-
-exports.frvbl = exports.flexrv('bl');
-
-exports.frvbc = exports.flexrv('bc');
-
-exports.frvbr = exports.flexrv('br');
-
-exports.frvbs = exports.flexrv('bs');
-
-exports.frvsl = exports.flexrv('sl');
-
-exports.frvsc = exports.flexrv('sc');
-
-exports.frvsr = exports.flexrv('sr');
-
-exports.frvss = exports.flexrv('ss');
+export const fhtl: string = flexh('tl');
+export const fhtc: string = flexh('tc');
+export const fhtr: string = flexh('tr');
+export const fhts: string = flexh('ts');
+export const fhcl: string = flexh('cl');
+export const fhcc: string = flexh('cc');
+export const fhcr: string = flexh('cr');
+export const fhcs: string = flexh('cs');
+export const fhbl: string = flexh('bl');
+export const fhbc: string = flexh('bc');
+export const fhbr: string = flexh('br');
+export const fhbs: string = flexh('bs');
+export const fhsl: string = flexh('sl');
+export const fhsc: string = flexh('sc');
+export const fhsr: string = flexh('sr');
+export const fhss: string = flexh('ss');
+export const frhtl: string = flexrh('tl');
+export const frhtc: string = flexrh('tc');
+export const frhtr: string = flexrh('tr');
+export const frhts: string = flexrh('ts');
+export const frhcl: string = flexrh('cl');
+export const frhcc: string = flexrh('cc');
+export const frhcr: string = flexrh('cr');
+export const frhcs: string = flexrh('cs');
+export const frhbl: string = flexrh('bl');
+export const frhbc: string = flexrh('bc');
+export const frhbr: string = flexrh('br');
+export const frhbs: string = flexrh('bs');
+export const frhsl: string = flexrh('sl');
+export const frhsc: string = flexrh('sc');
+export const frhsr: string = flexrh('sr');
+export const frhss: string = flexrh('ss');
+export const fvtl: string = flexv('tl');
+export const fvtc: string = flexv('tc');
+export const fvtr: string = flexv('tr');
+export const fvts: string = flexv('ts');
+export const fvcl: string = flexv('cl');
+export const fvcc: string = flexv('cc');
+export const fvcr: string = flexv('cr');
+export const fvcs: string = flexv('cs');
+export const fvbl: string = flexv('bl');
+export const fvbc: string = flexv('bc');
+export const fvbr: string = flexv('br');
+export const fvbs: string = flexv('bs');
+export const fvsl: string = flexv('sl');
+export const fvsc: string = flexv('sc');
+export const fvsr: string = flexv('sr');
+export const fvss: string = flexv('ss');
+export const frvtl: string = flexrv('tl');
+export const frvtc: string = flexrv('tc');
+export const frvtr: string = flexrv('tr');
+export const frvts: string = flexrv('ts');
+export const frvcl: string = flexrv('cl');
+export const frvcc: string = flexrv('cc');
+export const frvcr: string = flexrv('cr');
+export const frvcs: string = flexrv('cs');
+export const frvbl: string = flexrv('bl');
+export const frvbc: string = flexrv('bc');
+export const frvbr: string = flexrv('br');
+export const frvbs: string = flexrv('bs');
+export const frvsl: string = flexrv('sl');
+export const frvsc: string = flexrv('sc');
+export const frvsr: string = flexrv('sr');
+export const frvss: string = flexrv('ss');
 
 /**
  * CSS mixin for a mask element.
  */
-exports.mask = `
+export const mask: string = `
   mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
   overflow: hidden;
 `;

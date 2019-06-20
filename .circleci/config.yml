@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: node:10.16.0
+    - image: node:10.12.0
 
 version: 2
 jobs:
@@ -9,9 +9,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run:
-          name: Install APT packages
-          command: apt-get update -y && apt-get install jq -y
       - restore_cache:
           keys:
             - dependency-cache-{{ checksum "package-lock.json" }}
@@ -24,6 +21,9 @@ jobs:
           paths:
             - "node_modules"
       - run:
+          name: Build
+          command: npm run build
+      - run:
           name: Pack
           command: .circleci/pack.sh
       - store_artifacts:
@@ -32,10 +32,8 @@ jobs:
           root: .
           paths:
             - .circleci/
-            - lib/
+            - build/
             - node_modules/
-            - index.d.ts
-            - index.js
             - package.json
   test:
     <<: *defaults
@@ -56,26 +54,16 @@ jobs:
 
 workflows:
   version: 2
-  build_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
   build_test_deploy:
     jobs:
       - build:
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v.*/
       - test:
           requires:
             - build
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v.*/
       - deploy:
