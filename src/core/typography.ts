@@ -128,7 +128,7 @@ export function getFontWeightFromPath(path: string): FontWeight {
  *
  * @return Generated CSS rules.
  */
-export function fontFace(family: string, src: string, weight: FontWeight, style: FontStyle, display: FontDisplay): string {
+export function fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle, display?: FontDisplay): string {
   return `
     @font-face {
       font-family: ${family};
