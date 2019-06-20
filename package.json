@@ -1,6 +1,6 @@
 {
   "name": "promptu",
-  "version": "0.39.0",
+  "version": "0.40.0",
   "description": "Experimental CSS-in-JS library",
   "main": "build/index.js",
   "scripts": {
