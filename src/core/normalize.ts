@@ -1,5 +1,12 @@
-export default (): string => {
-  return `
+import minify from '../utils/minify';
+
+/**
+ * Normalizes CSS consistently across all major browsers.
+ *
+ * @see https://github.com/andrewscwei/promptu/blob/master/src/core/normalize.ts
+ */
+export default function(): string {
+  return minify(`
     html {
       border: none;
       box-sizing: border-box;
@@ -366,5 +373,5 @@ export default (): string => {
       color: inherit;
       opacity: .3;
     }
-  `;
-};
+  `);
+}

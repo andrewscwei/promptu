@@ -5,6 +5,12 @@
  * @param prefix - Output string prefix.
  *
  * @return RGB tuple.
+ *
+ * @example
+ * ```js
+ * toRGBTuple('#fff') // Returns '[255, 255, 255]'
+ * toRGBTuple('0x000', '0x') // Returns '[0, 0, 0]'
+ * ```
  */
 export function toRGBTuple(val: string | number, prefix: string = '#'): [number, number, number] {
   const t = typeof val === 'string' ? toHexNumber(val, prefix) : val;
@@ -22,6 +28,12 @@ export function toRGBTuple(val: string | number, prefix: string = '#'): [number,
  * @param prefix - Output string prefix.
  *
  * @return RGB string.
+ *
+ * @example
+ * ```js
+ * toRGBString('#fff') // Returns '255,255,255'
+ * toRGBString('0x000', '0x') // Returns '0,0,0'
+ * ```
  */
 export function toRGBString(val: string | number, prefix: string = '#'): string {
   const t = toRGBTuple(val, prefix);
@@ -35,9 +47,15 @@ export function toRGBString(val: string | number, prefix: string = '#'): string 
  * @param prefix - Output string prefix.
  *
  * @return Converted hex string.
+ *
+ * @example
+ * ```js
+ * toHexString(16777215) // Returns '#ffffff'
+ * toHexString(0, '0x') // Returns '#000000'
+ * ```
  */
 export function toHexString(val: number, prefix: string = '#'): string {
-  return `${prefix}${val.toString(16)}`;
+  return shortToLongHex(`${prefix}${val.toString(16)}`);
 }
 
 /**
@@ -47,6 +65,13 @@ export function toHexString(val: number, prefix: string = '#'): string {
  * @param prefix - Prefix to look out for.
  *
  * @return Hex number.
+ *
+ * @example
+ * ```js
+ * toHexNumber('#000') // Returns 0
+ * toHexNumber('#fff') // Returns 16777215
+ * toHexNumber('0xfff', '0x') // Returns 16777215
+ * ```
  */
 export function toHexNumber(val: string, prefix: string = '#'): number {
   const t1 = isShortHex(val, prefix) ? shortToLongHex(val, prefix) : val;
@@ -61,9 +86,20 @@ export function toHexNumber(val: string, prefix: string = '#'): number {
  * @param prefix - Prefix to look out for.
  *
  * @return `true` if the hex string is in shorthand notation, `false` otherwise.
+ *
+ * @example
+ * ```js
+ * isShortHex('#000') // Returns `true`
+ * isShortHex('0x000', '0x') // Returns `true`
+ * isShortHex('0x000000', '0x') // Returns `false`
+ * isShortHex('#000', '0x') // Returns `false`
+ * ```
  */
 export function isShortHex(val: string, prefix: string = '#'): boolean {
-  const t = val.startsWith(prefix) ? val.substring(prefix.length) : val;
+  if (!val.startsWith(prefix)) return false;
+
+  const t = val.substring(prefix.length);
+
   if (t.length === 3) return true;
   return false;
 }
@@ -75,11 +111,22 @@ export function isShortHex(val: string, prefix: string = '#'): boolean {
  * @param prefix - Prefix to look out for.
  *
  * @return Longhand hex value.
+ *
+ * @example
+ * ```js
+ * shortToLongHex('#fff') // Returns '#ffffff'
+ * shortToLongHex('0x000', '0x') // Returns '0x000000'
+ * ```
  */
 export function shortToLongHex(val: string, prefix: string = '#'): string {
-  if (!isShortHex(val, prefix)) return val;
   const t = val.startsWith(prefix) ? val.substring(prefix.length) : val;
-  return `${prefix}${t.replace(/(\w)(\w)(\w)/, '$1$1$2$2$3$3')}`;
+
+  if (isShortHex(val, prefix)) {
+    return `${prefix}${t.replace(/(\w)(\w)(\w)/, '$1$1$2$2$3$3')}`;
+  }
+  else {
+    return t.padStart(6, '0');
+  }
 }
 
 /**
@@ -91,6 +138,12 @@ export function shortToLongHex(val: string, prefix: string = '#'): string {
  * @param defaultUnit - Default unit if the unit is absent.
  *
  * @return Parsed value-unit tuple.
+ *
+ * @example
+ * ```js
+ * parseUnit('1px') // Returns [1, 'px']
+ * parseUnit('1em', 'em') // Returns [1, 'em']
+ * ```
  */
 export function parseUnit(val: string | number, defaultUnit: string = 'px'): [number, string] {
   const str = String(val);

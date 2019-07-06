@@ -1,7 +1,22 @@
 import { FontDisplay, FontStyle, FontVariant, FontWeight, LetterSpacing, LineHeight } from '../types';
+import minify from '../utils/minify';
 
 /**
  * All supported font weights.
+ *
+ * ```js
+ * {
+ *   thin: 100,
+ *   extraLight: 200,
+ *   light: 300,
+ *   normal: 400,
+ *   medium: 500,
+ *   semiBold: 600,
+ *   bold: 700,
+ *   extraBold: 800,
+ *   black: 900,
+ * }
+ * ```
  */
 export const fontWeights: { [key: string]: FontWeight } = {
   thin: 100,
@@ -16,11 +31,12 @@ export const fontWeights: { [key: string]: FontWeight } = {
 };
 
 /**
- * Infers the font format from a font file path.
+ * Infers the font format from a font file extension. Supported extensions
+ * include: `eot`, `woff2`, `woff`, `ttf`, `otf`, `svg`.
  *
  * @param path - The path of the font file.
  *
- * @return The font format.
+ * @return The font format. Defaults to `opentype` if unable to infer.
  */
 export function getFontFormatFromPath(path: string): string {
   const ext = path.split('.').pop();
@@ -50,11 +66,12 @@ export function getFontFormatFromPath(path: string): string {
 }
 
 /**
- * Infers the font style from a font file path.
+ * Infers the font style from a font file path. Supports `italic` and `oblique`.
  *
  * @param path - Path of the font file.
  *
- * @return The font style of the font file.
+ * @return The font style of the font file. Defaults to `normal` if unable to
+ *         infer.
  */
 export function getFontStyleFromPath(path: string): string {
   const basename = path.split('/').pop();
@@ -77,7 +94,7 @@ export function getFontStyleFromPath(path: string): string {
  *
  * @param path - Path of the font file.
  *
- * @return The font weight of the font file.
+ * @return The font weight of the font file. Defaults to normal (400).
  */
 export function getFontWeightFromPath(path: string): FontWeight {
   const basename = path.split('/').pop();
@@ -117,19 +134,34 @@ export function getFontWeightFromPath(path: string): FontWeight {
 }
 
 /**
- * CSS mixin for defining @font-face rules.
+ * CSS mixin for defining `@font-face` rules.
  *
  * @param family - Font family.
  * @param src - File path.
  * @param weight - Font weight, automatically inferred if unspecified.
  * @param style - Font style, automatically inferred if unspecified.
- * @param display - Font display, automatically inferred if
- *                             unspecified.
+ * @param display - Font display, automatically inferred if unspecified.
  *
  * @return Generated CSS rules.
+ *
+ * @example
+ *
+ * ```js
+ * fontFace('Roboto', require('fonts/Roboto.ttf')) // Returns...
+ * ```
+ *
+ * ```css
+ * [at]font-face {
+ *   font-family: 'Roboto';
+ *   src: url('fonts/Roboto.ttf') format('truetype');
+ *   font-style: normal;
+ *   font-weight: 400;
+ *   font-display: auto;
+ * }
+ * ```
  */
 export function fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle, display?: FontDisplay): string {
-  return `
+  return minify(`
     @font-face {
       font-family: ${family};
       src: url('${src}') format('${getFontFormatFromPath(src)}');
@@ -137,7 +169,7 @@ export function fontFace(family: string, src: string, weight?: FontWeight, style
       font-weight: ${weight || getFontWeightFromPath(src)};
       font-display: ${display || 'auto'};
     }
-  `;
+  `);
 }
 
 /**
@@ -155,9 +187,26 @@ export function fontFace(family: string, src: string, weight?: FontWeight, style
  * @param variant - Font variant.
  *
  * @return Generated CSS rules.
+ *
+ * @example
+ * ```js
+ * font('Roboto', '16px') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   font-family: 'Roboto';
+ *   font-size: 16px,
+ *   font-style: normal,
+ *   font-weight: 400,
+ *   font-variant: normal;
+ *   line-height: normal;
+ *   letter-spacing: normal;
+ * }
+ * ```
  */
 export function font(family: string, size: string | number = '1.6rem', weight: FontWeight = fontWeights.normal, style: FontStyle = 'normal', lineHeight: LineHeight = 'normal', letterSpacing: LetterSpacing = 'normal', variant: FontVariant = 'normal'): string {
-  return `
+  return minify(`
     font-family: ${family || 'sans-serif'};
     font-size: ${typeof size === 'number' ? `${size}rem` : size};
     font-style: ${style};
@@ -165,5 +214,5 @@ export function font(family: string, size: string | number = '1.6rem', weight: F
     font-variant: ${variant};
     line-height: ${typeof lineHeight === 'number' ? `${lineHeight}rem` : lineHeight};
     letter-spacing: ${typeof letterSpacing === 'number' ? `${letterSpacing}rem` : letterSpacing};
-  `;
+  `);
 }
