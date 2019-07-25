@@ -200,22 +200,25 @@ export default function(): string {
     input[type='tel'],
     input[type='url'],
     textarea {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-appearance: textfield;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-text-stroke: 0;
+      appearance: none;
+      border-radius: 0;
       border: none;
+      box-shadow: none;
       box-sizing: border-box;
+      font-weight: normal;
+      line-height: normal;
       margin: 0;
       outline: none;
       padding: 0;
-      font-weight: normal;
-      line-height: normal;
+      resize: none;
       text-decoration: none;
       text-rendering: optimizeLegibility;
       text-size-adjust: 100%;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      -webkit-appearance: textfield;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      -webkit-text-stroke: 0;
-      resize: none;
 
       &::-webkit-search-cancel-button,
       &::-webkit-search-decoration {
@@ -324,7 +327,9 @@ export default function(): string {
     }
 
     svg:not(:root) {
+      height: 100%;
       overflow: hidden;
+      width: auto;
     }
 
     hr {

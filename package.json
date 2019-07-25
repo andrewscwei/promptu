@@ -1,6 +1,6 @@
 {
   "name": "promptu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Micro CSS-in-JS library",
   "main": "build/index.js",
   "scripts": {
