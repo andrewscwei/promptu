@@ -378,5 +378,29 @@ export default function(): string {
       color: inherit;
       opacity: .3;
     }
+
+    .no-js:not(html) {
+      display: none;
+    }
+
+    .no-js .no-js:not(html) {
+      display: block;
+    }
+
+    .no-js .js {
+      display: none;
+    }
+
+    .supports-no-cookies:not(html) {
+      display: none;
+    }
+
+    html.supports-no-cookies .supports-no-cookies:not(html) {
+      display: block;
+    }
+
+    html.supports-no-cookies .supports-cookies {
+      display: none;
+    }
   `);
 }
