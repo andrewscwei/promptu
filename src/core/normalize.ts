@@ -102,6 +102,7 @@ export default function(): string {
     input[type='radio'],
     input[type='file'],
     select,
+    a[type='button'],
     button {
       border: none;
       box-sizing: border-box;
