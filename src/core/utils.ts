@@ -150,3 +150,30 @@ export function parseUnit(val: string | number, defaultUnit: string = 'px'): [nu
 
   return [parseFloat(str), str.match(/[\d.\-+]*\s*(.*)/)![1] || defaultUnit];
 }
+
+/**
+ * Converts a value to a valid CSS property.
+ *
+ * @param value - The value to convert. If it is a number, it will be suffixed
+ *                with the provided unit. If it is an array, the output CSS
+ *                property will be a comma delimited string of all the values.
+ * @param unit - The unit to append to the number value(s).
+ *
+ * @return CSS string.
+ *
+ * @throws Invalid value provided.
+ */
+export function toCSSProperty(value: number | string | (number | string)[], unit?: string): string {
+  if (typeof value === 'number') {
+    return `${value}${unit || ''}`;
+  }
+  else if (typeof value === 'string') {
+    return value;
+  }
+  else if (value instanceof Array) {
+    return value.map(v => toCSSProperty(v, unit)).join(', ');
+  }
+  else {
+    throw new Error('Unsupported value type');
+  }
+}
