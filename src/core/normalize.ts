@@ -191,6 +191,7 @@ export default function(): string {
       padding: 0;
       font-weight: normal;
       line-height: normal;
+      max-width: 100%;
       text-decoration: none;
       text-rendering: optimizeLegibility;
       text-size-adjust: 100%;
@@ -271,6 +272,11 @@ export default function(): string {
 
       &:-webkit-autofill {
         box-shadow: 0 0 0 1000px white inset;
+      }
+
+      &::placeholder {
+        color: inherit;
+        opacity: .3;
       }
     }
 
