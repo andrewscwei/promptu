@@ -173,6 +173,10 @@ export default function(): string {
       background: transparent;
     }
 
+    img {
+      min-height: 1px;
+    }
+
     h1,
     h2,
     h3,
