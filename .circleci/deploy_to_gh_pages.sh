@@ -5,7 +5,7 @@ if [ `git branch | grep gh-pages` ]; then
 fi
 
 git checkout -b gh-pages
-npm run build:docs
+npm run docs
 
 # Move generated docs to root and delete everything else.
 find . -maxdepth 1 ! -name '.' ! -name '..' ! -name 'docs' ! -name '.git' ! -name '.gitignore' -exec rm -rf {} \;

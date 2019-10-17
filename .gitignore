@@ -100,7 +100,6 @@ dist
 build
 upload
 uploads
-docs
 .publish
 
 # CMS files

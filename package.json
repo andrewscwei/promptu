@@ -5,8 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "clean": "rimraf build",
-    "docs": "open ./docs/index.html",
-    "build:docs": "rimraf docs && typedoc --excludeExternals --excludeNotExported --hideGenerator --name Promptu --out docs ./src/core",
+    "docs": "rimraf docs && typedoc --excludeExternals --excludeNotExported --hideGenerator --name Promptu --out docs ./src/core",
     "build": "npm run clean && webpack --config config/build.conf.ts",
     "test": "mocha --require ts-node/register --timeout 10000 --reporter spec --full-trace --colors --recursive --bail --exit \"tests/**/*.ts\"",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
