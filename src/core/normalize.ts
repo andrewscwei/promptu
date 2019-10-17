@@ -123,17 +123,38 @@ export default function(): string {
       overflow: visible;
       text-transform: none;
       -webkit-appearance: button;
+    }
 
-      &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-      }
+    input[type='submit']::-moz-focus-inner,
+    input[type='reset']::-moz-focus-inner,
+    input[type='button']::-moz-focus-inner,
+    input[type='checkbox']::-moz-focus-inner,
+    input[type='radio']::-moz-focus-inner,
+    input[type='file']::-moz-focus-inner,
+    select::-moz-focus-inner,
+    button::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
 
-      &:disabled,
-      &[disabled] {
-        cursor: default;
-        pointer-events: none;
-      }
+    input[type='submit'].disabled,
+    input[type='reset'].disabled,
+    input[type='button'].disabled,
+    input[type='checkbox'].disabled,
+    input[type='radio'].disabled,
+    input[type='file'].disabled,
+    select.disabled,
+    button.disabled,
+    input[type='submit'][disabled],
+    input[type='reset'][disabled],
+    input[type='button'][disabled],
+    input[type='checkbox'][disabled],
+    input[type='radio'][disabled],
+    input[type='file'][disabled],
+    select[disabled],
+    button[disabled] {
+      cursor: default;
+      pointer-events: none;
     }
 
     a[type='button'] {
@@ -156,17 +177,17 @@ export default function(): string {
       position: relative;
       overflow: visible;
       text-transform: none;
+    }
 
-      &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-      }
+    a[type='button']::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
 
-      &:disabled,
-      &[disabled] {
-        cursor: default;
-        pointer-events: none;
-      }
+    a[type='button']:disabled,
+    a[type='button'][disabled] {
+      cursor: default;
+      pointer-events: none;
     }
 
     button {
@@ -257,31 +278,135 @@ export default function(): string {
       text-decoration: none;
       text-rendering: optimizeLegibility;
       text-size-adjust: 100%;
+    }
 
-      &::-webkit-search-cancel-button,
-      &::-webkit-search-decoration {
-        -webkit-appearance: none;
-      }
+    input[type='text']::-webkit-search-cancel-button,
+    input[type='password']::-webkit-search-cancel-button,
+    input[type='number']::-webkit-search-cancel-button,
+    input[type='date']::-webkit-search-cancel-button,
+    input[type='month']::-webkit-search-cancel-button,
+    input[type='week']::-webkit-search-cancel-button,
+    input[type='time']::-webkit-search-cancel-button,
+    input[type='datetime']::-webkit-search-cancel-button,
+    input[type='datetime-local']::-webkit-search-cancel-button,
+    input[type='email']::-webkit-search-cancel-button,
+    input[type='search']::-webkit-search-cancel-button,
+    input[type='tel']::-webkit-search-cancel-button,
+    input[type='url']::-webkit-search-cancel-button,
+    textarea::-webkit-search-cancel-button,
+    input[type='text']::-webkit-search-decoration,
+    input[type='password']::-webkit-search-decoration,
+    input[type='number']::-webkit-search-decoration,
+    input[type='date']::-webkit-search-decoration,
+    input[type='month']::-webkit-search-decoration,
+    input[type='week']::-webkit-search-decoration,
+    input[type='time']::-webkit-search-decoration,
+    input[type='datetime']::-webkit-search-decoration,
+    input[type='datetime-local']::-webkit-search-decoration,
+    input[type='email']::-webkit-search-decoration,
+    input[type='search']::-webkit-search-decoration,
+    input[type='tel']::-webkit-search-decoration,
+    input[type='url']::-webkit-search-decoration,
+    textarea::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
 
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        height: auto;
-      }
+    input[type='text']::webkit-inner-spin-button,
+    input[type='password']::webkit-inner-spin-button,
+    input[type='number']::webkit-inner-spin-button,
+    input[type='date']::webkit-inner-spin-button,
+    input[type='month']::webkit-inner-spin-button,
+    input[type='week']::webkit-inner-spin-button,
+    input[type='time']::webkit-inner-spin-button,
+    input[type='datetime']::webkit-inner-spin-button,
+    input[type='datetime-local']::webkit-inner-spin-button,
+    input[type='email']::webkit-inner-spin-button,
+    input[type='search']::webkit-inner-spin-button,
+    input[type='tel']::webkit-inner-spin-button,
+    input[type='url']::webkit-inner-spin-button,
+    textarea::webkit-inner-spin-button,
+    input[type='text']::-webkit-outer-spin-button,
+    input[type='password']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='date']::-webkit-outer-spin-button,
+    input[type='month']::-webkit-outer-spin-button,
+    input[type='week']::-webkit-outer-spin-button,
+    input[type='time']::-webkit-outer-spin-button,
+    input[type='datetime']::-webkit-outer-spin-button,
+    input[type='datetime-local']::-webkit-outer-spin-button,
+    input[type='email']::-webkit-outer-spin-button,
+    input[type='search']::-webkit-outer-spin-button,
+    input[type='tel']::-webkit-outer-spin-button,
+    input[type='url']::-webkit-outer-spin-button,
+    textarea::-webkit-outer-spin-button {
+      height: auto;
+    }
 
-      &:focus,
-      &:invalid {
-        box-shadow: none;
-        outline-width: 0;
-      }
+    input[type='text']:focus,
+    input[type='password']:focus,
+    input[type='number']:focus,
+    input[type='date']:focus,
+    input[type='month']:focus,
+    input[type='week']:focus,
+    input[type='time']:focus,
+    input[type='datetime']:focus,
+    input[type='datetime-local']:focus,
+    input[type='email']:focus,
+    input[type='search']:focus,
+    input[type='tel']:focus,
+    input[type='url']:focus,
+    textarea:focus,
+    input[type='text']:invalid,
+    input[type='password']:invalid,
+    input[type='number']:invalid,
+    input[type='date']:invalid,
+    input[type='month']:invalid,
+    input[type='week']:invalid,
+    input[type='time']:invalid,
+    input[type='datetime']:invalid,
+    input[type='datetime-local']:invalid,
+    input[type='email']:invalid,
+    input[type='search']:invalid,
+    input[type='tel']:invalid,
+    input[type='url']:invalid,
+    textarea:invalid {
+      box-shadow: none;
+      outline-width: 0;
+    }
 
-      &:-webkit-autofill {
-        box-shadow: 0 0 0 1000px white inset;
-      }
+    input[type='text']:-webkit-autofill,
+    input[type='password']:-webkit-autofill,
+    input[type='number']:-webkit-autofill,
+    input[type='date']:-webkit-autofill,
+    input[type='month']:-webkit-autofill,
+    input[type='week']:-webkit-autofill,
+    input[type='time']:-webkit-autofill,
+    input[type='datetime']:-webkit-autofill,
+    input[type='datetime-local']:-webkit-autofill,
+    input[type='email']:-webkit-autofill,
+    input[type='search']:-webkit-autofill,
+    input[type='tel']:-webkit-autofill,
+    input[type='url']:-webkit-autofill,
+    textarea:-webkit-autofill {
+      box-shadow: 0 0 0 1000px white inset;
+    }
 
-      &::placeholder {
-        color: inherit;
-        opacity: .3;
-      }
+    input[type='text']::placeholder,
+    input[type='password']::placeholder,
+    input[type='number']::placeholder,
+    input[type='date']::placeholder,
+    input[type='month']::placeholder,
+    input[type='week']::placeholder,
+    input[type='time']::placeholder,
+    input[type='datetime']::placeholder,
+    input[type='datetime-local']::placeholder,
+    input[type='email']::placeholder,
+    input[type='search']::placeholder,
+    input[type='tel']::placeholder,
+    input[type='url']::placeholder,
+    textarea::placeholder {
+      color: inherit;
+      opacity: .3;
     }
 
     form {
@@ -305,12 +430,12 @@ export default function(): string {
     a {
       text-decoration: none;
       background-color: transparent;
+    }
 
-      &:active,
-      &:hover {
-        outline: 0;
-        text-decoration: none;
-      }
+    a:active,
+    a:hover {
+      outline: 0;
+      text-decoration: none;
     }
 
     audio,

@@ -66,59 +66,6 @@ export const cover: string = minify(`
 `);
 
 /**
- * ```css
- * {
- *   box-sizing: border-box;
- *   display: block;
- *   height: 100%;
- *   object-fit: cover;
- *   width: 100%;
- * }
- * ```
- */
-export const coverImage: string = minify(`
-  box-sizing: border-box;
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-`);
-
-/**
- * ```css
- * {
- *   box-sizing: border-box;
- *   display: block;
- *   height: 100%;
- *   object-fit: cover;
- *   width: 100%;
- * }
- * ```
- */
-export const coverVideo: string = minify(`
-  box-sizing: border-box;
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-`);
-
-/**
- * CSS mixin for a mask element.
- *
- * ```css
- * {
- *   mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
- *   overflow: hidden;
- * }
- * ```
- */
-export const mask: string = minify(`
-  mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
-  overflow: hidden;
-`);
-
-/**
  * Transforms an element to a flex box where the child elements are
  * horizontally aligned.
  *

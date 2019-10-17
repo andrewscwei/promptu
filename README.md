@@ -1,4 +1,4 @@
-# promptu [![npm](https://img.shields.io/npm/v/promptu.svg)](https://www.npmjs.com/package/promptu) [![CircleCI](https://img.shields.io/circleci/build/github/andrewscwei/promptu.svg)](https://circleci.com/gh/andrewscwei/promptu)
+# Promptu [![npm](https://img.shields.io/npm/v/promptu.svg)](https://www.npmjs.com/package/promptu) [![CircleCI](https://img.shields.io/circleci/build/github/andrewscwei/promptu.svg)](https://circleci.com/gh/andrewscwei/promptu)
 
 Micro CSS-in-JS library.
 
