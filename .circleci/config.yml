@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/repo
   docker:
-    - image: node:10.12.0
+    - image: node:10.16.0
 
 version: 2
 jobs:
@@ -56,9 +56,6 @@ jobs:
       - deploy:
           name: Deploy to NPM
           command: .circleci/deploy_to_npm.sh
-      - deploy:
-          name: Deploy docs to GitHub pages
-          command: .circleci/deploy_to_gh_pages.sh
 
 workflows:
   version: 2
