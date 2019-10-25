@@ -77,7 +77,6 @@ export default function(): string {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
       display: block;
-      position: relative;
     }
 
     button,
