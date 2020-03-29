@@ -1,12 +1,12 @@
 {
   "name": "promptu",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Micro CSS-in-JS library",
   "main": "build/index.js",
   "scripts": {
-    "clean": "rimraf build",
+    "clean": "rimraf build lib",
     "docs": "rimraf docs && typedoc --excludeExternals --excludeNotExported --hideGenerator --name Promptu --out docs ./src/core && touch ./docs/.nojekyll",
-    "build": "npm run clean && webpack --config config/build.conf.ts",
+    "build": "npm run clean && webpack --config config/build.conf.ts && ts-node scripts/generateNormalizeCSS",
     "test": "mocha --require ts-node/register --timeout 10000 --reporter spec --full-trace --colors --recursive --bail --exit \"tests/**/*.ts\"",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
     "lint:fix": "npm run lint -- --fix"
@@ -20,7 +20,8 @@
     "js"
   ],
   "files": [
-    "build"
+    "build",
+    "lib"
   ],
   "author": "Andrew Wei <andrewscwei@gmail.com>",
   "license": "MIT",

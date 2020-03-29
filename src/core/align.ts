@@ -2,6 +2,194 @@ import { Alignment } from '../types';
 import minify from '../utils/minify';
 
 /**
+ * Applies horizontal margins to an element.
+ *
+ * @param value - Margin value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * horizontalMargin('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   margin-left: 0;
+ *   margin-right: 0;
+ * }
+ * ```
+ */
+export function horizontalMargin(value: string) {
+  return minify(`
+    margin-left: ${value};
+    margin-right: ${value};
+  `);
+}
+
+/**
+ * Applies vertical margins to an element.
+ *
+ * @param value - Margin value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * verticalMargin('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   margin-top: 0;
+ *   margin-bottom: 0;
+ * }
+ * ```
+ */
+export function verticalMargin(value: string) {
+  return minify(`
+    margin-left: ${value};
+    margin-right: ${value};
+  `);
+}
+
+/**
+ * Applies horizontal paddings to an element.
+ *
+ * @param value - Padding value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * horizontalPadding('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   padding-left: 0;
+ *   padding-right: 0;
+ * }
+ * ```
+ */
+export function horizontalPadding(value: string) {
+  return minify(`
+    padding-left: ${value};
+    padding-right: ${value};
+  `);
+}
+
+/**
+ * Applies vertical paddings to an element.
+ *
+ * @param value - Padding value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * verticalPadding('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   padding-top: 0;
+ *   padding-bottom: 0;
+ * }
+ * ```
+ */
+export function verticalPadding(value: string) {
+  return minify(`
+    padding-top: ${value};
+    padding-bottom: ${value};
+  `);
+}
+
+/**
+ * Applies horizontal margins to an element.
+ *
+ * @param value - Margin value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * hm('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   margin-left: 0;
+ *   margin-right: 0;
+ * }
+ * ```
+ */
+export const hm = horizontalMargin;
+
+/**
+ * Applies vertical margins to an element.
+ *
+ * @param value - Margin value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * vm('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   margin-top: 0;
+ *   margin-bottom: 0;
+ * }
+ * ```
+ */
+export const vm = verticalMargin;
+
+/**
+ * Applies horizontal paddings to an element.
+ *
+ * @param value - Padding value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * hp('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   padding-left: 0;
+ *   padding-right: 0;
+ * }
+ * ```
+ */
+export const hp = horizontalPadding;
+
+/**
+ * Applies vertical paddings to an element.
+ *
+ * @param value - Padding value.
+ *
+ * @returns CSS string.
+ *
+ * @example
+ * ```js
+ * vp('0') // Returns...
+ * ```
+ *
+ * ```css
+ * {
+ *   padding-top: 0;
+ *   padding-bottom: 0;
+ * }
+ * ```
+ */
+export const vp = verticalPadding;
+
+/**
  * Applies absolute alignment to an element.
  *
  * @param alignment - Alignment style.
@@ -358,8 +546,8 @@ export const bc = abs('bc');
 export const br = abs('br');
 
 /**
-* ```css
-* {
+ * ```css
+ * {
  *   bottom: unset;
  *   left: 0;
  *   margin: 0;
