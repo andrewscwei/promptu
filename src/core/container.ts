@@ -70,6 +70,8 @@ export const cover: string = minify(`
  * horizontally aligned.
  *
  * @param alignment - Alignment style of child elements.
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -89,7 +91,7 @@ export const cover: string = minify(`
  * }
  * ```
  */
-export function flexh(alignment: Alignment = 'cc'): string {
+export function flexh(alignment: Alignment = 'cc', isInline: boolean = false): string {
   let t;
 
   switch (alignment) {
@@ -193,7 +195,7 @@ export function flexh(alignment: Alignment = 'cc'): string {
   return minify(`
     ${t}
     box-sizing: border-box;
-    display: flex;
+    display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: row;
     flex-wrap: nowrap;
   `);
@@ -204,6 +206,8 @@ export function flexh(alignment: Alignment = 'cc'): string {
  * horizontally aligned.
  *
  * @param alignment - Alignment style of child elements.
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -223,7 +227,7 @@ export function flexh(alignment: Alignment = 'cc'): string {
  * }
  * ```
  */
-export function flexrh(alignment: Alignment = 'cc'): string {
+export function flexrh(alignment: Alignment = 'cc', isInline: boolean = false): string {
   let t;
 
   switch (alignment) {
@@ -327,7 +331,7 @@ export function flexrh(alignment: Alignment = 'cc'): string {
   return minify(`
     ${t}
     box-sizing: border-box;
-    display: flex;
+    display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: row-reverse;
     flex-wrap: nowrap;
   `);
@@ -338,6 +342,8 @@ export function flexrh(alignment: Alignment = 'cc'): string {
  * aligned.
  *
  * @param alignment - Alignment style of child elements.
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -357,7 +363,7 @@ export function flexrh(alignment: Alignment = 'cc'): string {
  * }
  * ```
  */
-export function flexv(alignment: Alignment = 'cc'): string {
+export function flexv(alignment: Alignment = 'cc', isInline: boolean = false): string {
   let t;
 
   switch (alignment) {
@@ -461,7 +467,7 @@ export function flexv(alignment: Alignment = 'cc'): string {
   return minify(`
     ${t}
     box-sizing: border-box;
-    display: flex;
+    display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: column;
     flex-wrap: nowrap;
   `);
@@ -472,6 +478,8 @@ export function flexv(alignment: Alignment = 'cc'): string {
  * aligned.
  *
  * @param alignment - Alignment style of child elements.
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -491,7 +499,7 @@ export function flexv(alignment: Alignment = 'cc'): string {
  * }
  * ```
  */
-export function flexrv(alignment: Alignment = 'cc'): string {
+export function flexrv(alignment: Alignment = 'cc', isInline: boolean = false): string {
   let t;
 
   switch (alignment) {
@@ -595,7 +603,7 @@ export function flexrv(alignment: Alignment = 'cc'): string {
   return minify(`
     ${t}
     box-sizing: border-box;
-    display: flex;
+    display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: column-reverse;
     flex-wrap: nowrap;
   `);
@@ -1496,3 +1504,899 @@ export const frvsr: string = flexrv('sr');
  * ```
  */
 export const frvss: string = flexrv('ss');
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifhtl: string = flexh('tl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifhtc: string = flexh('tc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifhtr: string = flexh('tr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifhts: string = flexh('ts', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifhcl: string = flexh('cl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifhcc: string = flexh('cc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifhcr: string = flexh('cr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifhcs: string = flexh('cs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifhbl: string = flexh('bl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifhbc: string = flexh('bc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifhbr: string = flexh('br', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifhbs: string = flexh('bs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifhsl: string = flexh('sl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifhsc: string = flexh('sc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifhsr: string = flexh('sr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifhss: string = flexh('ss', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrhtl: string = flexrh('tl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrhtc: string = flexrh('tc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrhtr: string = flexrh('tr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrhts: string = flexrh('ts', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrhcl: string = flexrh('cl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrhcc: string = flexrh('cc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrhcr: string = flexrh('cr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrhcs: string = flexrh('cs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrhbl: string = flexrh('bl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrhbc: string = flexrh('bc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrhbr: string = flexrh('br', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrhbs: string = flexrh('bs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrhsl: string = flexrh('sl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrhsc: string = flexrh('sc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrhsr: string = flexrh('sr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrhss: string = flexrh('ss', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ````
+ */
+export const ifvtl: string = flexv('tl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ````
+ */
+export const ifvtc: string = flexv('tc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ````
+ */
+export const ifvtr: string = flexv('tr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ````
+ */
+export const ifvts: string = flexv('ts', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ````
+ */
+export const ifvcl: string = flexv('cl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ````
+ */
+export const ifvcc: string = flexv('cc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ````
+ */
+export const ifvcr: string = flexv('cr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ````
+ */
+export const ifvcs: string = flexv('cs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ````
+ */
+export const ifvbl: string = flexv('bl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ````
+ */
+export const ifvbc: string = flexv('bc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ````
+ */
+export const ifvbr: string = flexv('br', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ````
+ */
+export const ifvbs: string = flexv('bs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ````
+ */
+export const ifvsl: string = flexv('sl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ````
+ */
+export const ifvsc: string = flexv('sc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ````
+ */
+export const ifvsr: string = flexv('sr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ````
+ */
+export const ifvss: string = flexv('ss', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrvtl: string = flexrv('tl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrvtc: string = flexrv('tc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrvtr: string = flexrv('tr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-end;
+ * }
+ * ```
+ */
+export const ifrvts: string = flexrv('ts', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrvcl: string = flexrv('cl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrvcc: string = flexrv('cc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrvcr: string = flexrv('cr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: center;
+ * }
+ * ```
+ */
+export const ifrvcs: string = flexrv('cs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrvbl: string = flexrv('bl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrvbc: string = flexrv('bc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrvbr: string = flexrv('br', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifrvbs: string = flexrv('bs', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrvsl: string = flexrv('sl', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: center;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrvsc: string = flexrv('sc', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-end;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrvsr: string = flexrv('sr', true);
+
+/**
+ * ```css
+ * {
+ *   align-items: stretch;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: column-reverse;
+ *   flex-wrap: nowrap;
+ *   justify-content: space-between;
+ * }
+ * ```
+ */
+export const ifrvss: string = flexrv('ss', true);
