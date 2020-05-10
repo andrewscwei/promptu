@@ -1,4 +1,4 @@
-# Promptu [![CI](https://github.com/andrewscwei/promptu/workflows/CI/badge.svg)](https://github.com/andrewscwei/promptu/actions?query=workflow%3ACI) [![CD](https://github.com/andrewscwei/promptu/workflows/CD/badge.svg)](https://github.com/andrewscwei/promptu/actions?query=workflow%3ACD)
+# Promptu [![npm](https://img.shields.io/npm/v/promptu.svg)](https://www.npmjs.com/package/promptu) [![CI](https://github.com/andrewscwei/promptu/workflows/CI/badge.svg)](https://github.com/andrewscwei/promptu/actions?query=workflow%3ACI) [![CD](https://github.com/andrewscwei/promptu/workflows/CD/badge.svg)](https://github.com/andrewscwei/promptu/actions?query=workflow%3ACD)
 
 Micro CSS-in-JS library.
 
