@@ -17,6 +17,5 @@ export function transition(property: string | string[], duration: number | strin
     transition-duration: ${toCSSProperty(duration, 'ms')};
     transition-timing-function: ${toCSSProperty(timingFunction)};
     transition-delay: ${toCSSProperty(delay, 'ms')};
-    will-change: ${toCSSProperty(property)};
   `);
 }
