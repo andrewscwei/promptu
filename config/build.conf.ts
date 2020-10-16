@@ -1,4 +1,3 @@
-import CompressionWebpackPlugin from 'compression-webpack-plugin';
 import path from 'path';
 import { Configuration } from 'webpack';
 import nodeExternals from 'webpack-node-externals';
@@ -27,9 +26,6 @@ const config: Configuration = {
     sourceMapFilename: '[file].map',
     libraryTarget: 'umd',
   },
-  plugins: [
-    new CompressionWebpackPlugin(),
-  ],
   resolve: {
     extensions: ['.js', '.ts', '.json'],
   },
@@ -37,7 +33,6 @@ const config: Configuration = {
     colors: true,
     errors: true,
     errorDetails: true,
-    maxModules: 0,
     modules: true,
     moduleTrace: true,
     publicPath: true,

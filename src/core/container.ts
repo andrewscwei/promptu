@@ -91,7 +91,7 @@ export const cover: string = minify(`
  * }
  * ```
  */
-export function flexh(alignment: Alignment = 'cc', isInline: boolean = false): string {
+export function flexh(alignment: Alignment = 'cc', isInline = false): string {
   let t;
 
   switch (alignment) {
@@ -227,7 +227,7 @@ export function flexh(alignment: Alignment = 'cc', isInline: boolean = false): s
  * }
  * ```
  */
-export function flexrh(alignment: Alignment = 'cc', isInline: boolean = false): string {
+export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
   let t;
 
   switch (alignment) {
@@ -363,7 +363,7 @@ export function flexrh(alignment: Alignment = 'cc', isInline: boolean = false): 
  * }
  * ```
  */
-export function flexv(alignment: Alignment = 'cc', isInline: boolean = false): string {
+export function flexv(alignment: Alignment = 'cc', isInline = false): string {
   let t;
 
   switch (alignment) {
@@ -499,7 +499,7 @@ export function flexv(alignment: Alignment = 'cc', isInline: boolean = false): s
  * }
  * ```
  */
-export function flexrv(alignment: Alignment = 'cc', isInline: boolean = false): string {
+export function flexrv(alignment: Alignment = 'cc', isInline = false): string {
   let t;
 
   switch (alignment) {

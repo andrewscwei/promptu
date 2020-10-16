@@ -12,7 +12,7 @@
  * toRGBTuple('0x000', '0x') // Returns '[0, 0, 0]'
  * ```
  */
-export function toRGBTuple(val: string | number, prefix: string = '#'): [number, number, number] {
+export function toRGBTuple(val: string | number, prefix = '#'): [number, number, number] {
   const t = typeof val === 'string' ? toHexNumber(val, prefix) : val;
   const r = (t & 0xFF0000) >> 16;
   const g = (t & 0xFF00) >> 8;
@@ -35,7 +35,7 @@ export function toRGBTuple(val: string | number, prefix: string = '#'): [number,
  * toRGBString('0x000', '0x') // Returns '0,0,0'
  * ```
  */
-export function toRGBString(val: string | number, prefix: string = '#'): string {
+export function toRGBString(val: string | number, prefix = '#'): string {
   const t = toRGBTuple(val, prefix);
   return t.join(',');
 }
@@ -54,7 +54,7 @@ export function toRGBString(val: string | number, prefix: string = '#'): string 
  * toHexString(0, '0x') // Returns '#000000'
  * ```
  */
-export function toHexString(val: number, prefix: string = '#'): string {
+export function toHexString(val: number, prefix = '#'): string {
   return shortToLongHex(`${prefix}${val.toString(16)}`);
 }
 
@@ -73,7 +73,7 @@ export function toHexString(val: number, prefix: string = '#'): string {
  * toHexNumber('0xfff', '0x') // Returns 16777215
  * ```
  */
-export function toHexNumber(val: string, prefix: string = '#'): number {
+export function toHexNumber(val: string, prefix = '#'): number {
   const t1 = isShortHex(val, prefix) ? shortToLongHex(val, prefix) : val;
   const t2 = t1.startsWith(prefix) ? t1.substring(prefix.length) : t1;
   return parseInt(t2, 16);
@@ -95,7 +95,7 @@ export function toHexNumber(val: string, prefix: string = '#'): number {
  * isShortHex('#000', '0x') // Returns `false`
  * ```
  */
-export function isShortHex(val: string, prefix: string = '#'): boolean {
+export function isShortHex(val: string, prefix = '#'): boolean {
   if (!val.startsWith(prefix)) return false;
 
   const t = val.substring(prefix.length);
@@ -118,7 +118,7 @@ export function isShortHex(val: string, prefix: string = '#'): boolean {
  * shortToLongHex('0x000', '0x') // Returns '0x000000'
  * ```
  */
-export function shortToLongHex(val: string, prefix: string = '#'): string {
+export function shortToLongHex(val: string, prefix = '#'): string {
   const t = val.startsWith(prefix) ? val.substring(prefix.length) : val;
 
   if (isShortHex(val, prefix)) {
@@ -145,7 +145,7 @@ export function shortToLongHex(val: string, prefix: string = '#'): string {
  * parseUnit('1em', 'em') // Returns [1, 'em']
  * ```
  */
-export function parseUnit(val: string | number, defaultUnit: string = 'px'): [number, string] {
+export function parseUnit(val: string | number, defaultUnit = 'px'): [number, string] {
   const str = String(val);
 
   return [parseFloat(str), str.match(/[\d.\-+]*\s*(.*)/)![1] || defaultUnit];
