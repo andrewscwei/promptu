@@ -48,4 +48,6 @@ jobs:
         env:
           NPM_AUTH: ${{ secrets.NPM_AUTH }}
       - name: Deploy to GitHub pages
+        env:
+          GH_USER: ${{ github.actor }}
         run: .github/workflows/deploy_to_gh_pages.sh
