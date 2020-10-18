@@ -27,4 +27,6 @@ git add -fA
 git commit --allow-empty -m "[SKIP CI] $(git log -1 --pretty=%B)"
 git push -f $__ORIGIN_URL__ gh-pages
 
+echo $__GH_USER__
+echo $GITHUB_ACTOR
 echo "Successfully published docs to GitHub Pages"
