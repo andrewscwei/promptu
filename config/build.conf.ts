@@ -1,6 +1,5 @@
 import path from 'path';
 import { Configuration } from 'webpack';
-import nodeExternals from 'webpack-node-externals';
 
 const cwd = path.join(__dirname, '../');
 
@@ -9,7 +8,7 @@ const config: Configuration = {
   entry: {
     index: path.join(cwd, 'src/index.ts'),
   },
-  externals: [nodeExternals()],
+  externals: [require('webpack-node-externals')()],
   mode: 'production',
   module: {
     rules: [{
