@@ -24,8 +24,8 @@ mv ${__GH_PAGES_DIR__}/* .
 rm -R ${__GH_PAGES_DIR__}/
 
 # Push to gh-pages.
-git config user.name "$(git --no-pager log --format=format:'%an' -n 1)"
-git config user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+git config user.name "$__GH_USER__"
+git config user.email "$__GH_USER__@users.noreply.github.com"
 git add -fA
 git commit --allow-empty -m "[SKIP CI] $(git log -1 --pretty=%B)"
 git push -f $__ORIGIN_URL__ gh-pages
