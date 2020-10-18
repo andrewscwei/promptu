@@ -9,7 +9,7 @@ __GH_PAGES_DIR__=${GH_PAGES_DIR:-.gh-pages}
 __GH_USER__=${GH_USER:-$GITHUB_ACTOR}
 __GH_REPO__=${GH_REPO:-$GITHUB_REPOSITORY}
 # __ORIGIN_URL__=`git config --get remote.origin.url`
-__ORIGIN_URL__="https://$__GH_USER__:$GH_TOKEN@github.com/$__GH_REPO__.git"
+__ORIGIN_URL__="https://$__GH_USER__:$GH_TOKEN@github.com/$__GH_REPO__"
 
 if [ `git branch | grep gh-pages` ]; then
   git branch -D gh-pages
@@ -30,4 +30,9 @@ git add -fA
 git commit --allow-empty -m "[SKIP CI] $(git log -1 --pretty=%B)"
 git push -f $__ORIGIN_URL__ gh-pages
 
-echo "Successfully published docs to GitHub Pages"
+if [ $? -ne 0 ]; then
+  exit 1
+else
+  echo "Successfully published docs to GitHub Pages"
+fi
+
