@@ -9,7 +9,7 @@ __GH_PAGES_DIR__=${GH_PAGES_DIR:-.gh-pages}
 __GH_USER__=${GH_USER:-$GITHUB_ACTOR}
 __GH_REPO__=${GH_REPO:-$GITHUB_REPOSITORY}
 # __ORIGIN_URL__=`git config --get remote.origin.url`
-__ORIGIN_URL__="https://x-access-token:${GH_TOKEN}@github.com/${__GH_REPO__}"
+__ORIGIN_URL__="https://$__GH_USER__:$GH_TOKEN@github.com/$__GH_REPO__.git"
 
 if [ `git branch | grep gh-pages` ]; then
   git branch -D gh-pages
@@ -24,8 +24,8 @@ mv ${__GH_PAGES_DIR__}/* .
 rm -R ${__GH_PAGES_DIR__}/
 
 # Push to gh-pages.
-git config --global user.name "$__GH_USER__"
-git config --global user.email "$__GH_USER__@users.noreply.github.com"
+git config user.name "$__GH_USER__"
+git config user.email "$__GH_USER__@users.noreply.github.com"
 git add -fA
 git commit --allow-empty -m "[SKIP CI] $(git log -1 --pretty=%B)"
 git push -f $__ORIGIN_URL__ gh-pages

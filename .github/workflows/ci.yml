@@ -38,3 +38,5 @@ jobs:
         run: npm test
       - name: Deploy to GitHub pages
         run: .github/workflows/deploy_to_gh_pages.sh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
