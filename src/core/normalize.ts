@@ -531,12 +531,23 @@ export default function(): string {
     }
 
     table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: none;
+      box-sizing: border-box;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      position: relative;
+    }
+
+    td,
+    th,
+    tbody {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
-      border-collapse: collapse;
-      border-spacing: 0;
       border: none;
       box-sizing: border-box;
       font-weight: normal;
@@ -544,15 +555,9 @@ export default function(): string {
       margin: 0;
       outline: none;
       padding: 0;
-      position: relative;
       text-decoration: none;
       text-rendering: optimizeLegibility;
       text-size-adjust: 100%;
-    }
-
-    td,
-    th {
-      padding: 0;
     }
 
     ::placeholder {
