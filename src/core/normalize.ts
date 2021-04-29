@@ -54,7 +54,6 @@ export default function(): string {
     nav,
     section,
     div,
-    table,
     tr,
     td,
     th,
@@ -532,8 +531,23 @@ export default function(): string {
     }
 
     table {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-text-stroke: 0;
       border-collapse: collapse;
       border-spacing: 0;
+      border: none;
+      box-sizing: border-box;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      position: relative;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
     }
 
     td,
