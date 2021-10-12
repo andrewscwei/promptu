@@ -1,5 +1,5 @@
-import { Alignment } from '../types';
-import minify from '../utils/minify';
+import { Alignment } from '../types'
+import minify from '../utils/minify'
 
 /**
  * ```css
@@ -12,7 +12,7 @@ import minify from '../utils/minify';
 export const box: string = minify(`
   box-sizing: border-box;
   display: block;
-`);
+`)
 
 /**
  * ```css
@@ -25,7 +25,7 @@ export const box: string = minify(`
 export const ibox: string = minify(`
   box-sizing: border-box;
   display: inline-block;
-`);
+`)
 
 /**
  * ```css
@@ -42,7 +42,7 @@ export const filled: string = minify(`
   display: block;
   height: 100%;
   width: 100%;
-`);
+`)
 
 /**
  * ```css
@@ -63,7 +63,7 @@ export const cover: string = minify(`
   min-height: 100%;
   overflow: hidden;
   width: 100%;
-`);
+`)
 
 /**
  * Transforms an element to a flex box where the child elements are
@@ -92,104 +92,104 @@ export const cover: string = minify(`
  * ```
  */
 export function flexh(alignment: Alignment = 'cc', isInline = false): string {
-  let t;
+  let t
 
   switch (alignment) {
   case 'tl':
     t = `
       align-items: flex-start;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'tc':
     t = `
       align-items: flex-start;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'tr':
     t = `
       align-items: flex-start;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'ts':
     t = `
       align-items: flex-start;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'cl':
     t = `
       align-items: center;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'cr':
     t = `
       align-items: center;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'cs':
     t = `
       align-items: center;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'bl':
     t = `
       align-items: flex-end;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'bc':
     t = `
       align-items: flex-end;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'br':
     t = `
       align-items: flex-end;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'bs':
     t = `
       align-items: flex-end;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'sl':
     t = `
       align-items: stretch;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'sc':
     t = `
       align-items: stretch;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'sr':
     t = `
       align-items: stretch;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'ss':
     t = `
       align-items: stretch;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   default:
     t = `
       align-items: center;
       justify-content: center;
-    `;
+    `
   }
 
   return minify(`
@@ -198,7 +198,7 @@ export function flexh(alignment: Alignment = 'cc', isInline = false): string {
     display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: row;
     flex-wrap: nowrap;
-  `);
+  `)
 }
 
 /**
@@ -228,104 +228,104 @@ export function flexh(alignment: Alignment = 'cc', isInline = false): string {
  * ```
  */
 export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
-  let t;
+  let t
 
   switch (alignment) {
   case 'tl':
     t = `
       align-items: flex-start;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'tc':
     t = `
       align-items: flex-start;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'tr':
     t = `
       align-items: flex-start;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'ts':
     t = `
       align-items: flex-start;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'cl':
     t = `
       align-items: center;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'cr':
     t = `
       align-items: center;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'cs':
     t = `
       align-items: center;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'bl':
     t = `
       align-items: flex-end;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'bc':
     t = `
       align-items: flex-end;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'br':
     t = `
       align-items: flex-end;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'bs':
     t = `
       align-items: flex-end;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'sl':
     t = `
       align-items: stretch;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'sc':
     t = `
       align-items: stretch;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'sr':
     t = `
       align-items: stretch;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'ss':
     t = `
       align-items: stretch;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   default:
     t = `
       align-items: center;
       justify-content: center;
-    `;
+    `
   }
 
   return minify(`
@@ -334,7 +334,7 @@ export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
     display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: row-reverse;
     flex-wrap: nowrap;
-  `);
+  `)
 }
 
 /**
@@ -364,104 +364,104 @@ export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
  * ```
  */
 export function flexv(alignment: Alignment = 'cc', isInline = false): string {
-  let t;
+  let t
 
   switch (alignment) {
   case 'tl':
     t = `
       align-items: flex-start;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'tc':
     t = `
       align-items: center;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'tr':
     t = `
       align-items: flex-end;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'ts':
     t = `
       align-items: stretch;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'cl':
     t = `
       align-items: flex-start;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'cr':
     t = `
       align-items: flex-end;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'cs':
     t = `
       align-items: stretch;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'bl':
     t = `
       align-items: flex-start;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'bc':
     t = `
       align-items: center;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'br':
     t = `
       align-items: flex-end;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'bs':
     t = `
       align-items: stretch;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'sl':
     t = `
       align-items: flex-start;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'sc':
     t = `
       align-items: center;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'sr':
     t = `
       align-items: flex-end;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'ss':
     t = `
       align-items: stretch;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   default:
     t = `
       align-items: center;
       justify-content: center;
-    `;
+    `
   }
 
   return minify(`
@@ -470,7 +470,7 @@ export function flexv(alignment: Alignment = 'cc', isInline = false): string {
     display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: column;
     flex-wrap: nowrap;
-  `);
+  `)
 }
 
 /**
@@ -500,104 +500,104 @@ export function flexv(alignment: Alignment = 'cc', isInline = false): string {
  * ```
  */
 export function flexrv(alignment: Alignment = 'cc', isInline = false): string {
-  let t;
+  let t
 
   switch (alignment) {
   case 'tl':
     t = `
       align-items: flex-start;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'tc':
     t = `
       align-items: center;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'tr':
     t = `
       align-items: flex-end;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'ts':
     t = `
       align-items: stretch;
       justify-content: flex-end;
-    `;
-    break;
+    `
+    break
   case 'cl':
     t = `
       align-items: flex-start;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'cr':
     t = `
       align-items: flex-end;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'cs':
     t = `
       align-items: stretch;
       justify-content: center;
-    `;
-    break;
+    `
+    break
   case 'bl':
     t = `
       align-items: flex-start;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'bc':
     t = `
       align-items: center;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'br':
     t = `
       align-items: flex-end;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'bs':
     t = `
       align-items: stretch;
       justify-content: flex-start;
-    `;
-    break;
+    `
+    break
   case 'sl':
     t = `
       align-items: flex-start;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'sc':
     t = `
       align-items: center;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'sr':
     t = `
       align-items: flex-end;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   case 'ss':
     t = `
       align-items: stretch;
       justify-content: space-between;
-    `;
-    break;
+    `
+    break
   default:
     t = `
       align-items: center;
       justify-content: center;
-    `;
+    `
   }
 
   return minify(`
@@ -606,7 +606,7 @@ export function flexrv(alignment: Alignment = 'cc', isInline = false): string {
     display: ${isInline ? 'inline-flex' : 'flex'};
     flex-direction: column-reverse;
     flex-wrap: nowrap;
-  `);
+  `)
 }
 
 /**
@@ -621,7 +621,7 @@ export function flexrv(alignment: Alignment = 'cc', isInline = false): string {
  * }
  * ```
  */
-export const fhtl: string = flexh('tl');
+export const fhtl: string = flexh('tl')
 
 /**
  * ```css
@@ -635,7 +635,7 @@ export const fhtl: string = flexh('tl');
  * }
  * ```
  */
-export const fhtc: string = flexh('tc');
+export const fhtc: string = flexh('tc')
 
 /**
  * ```css
@@ -649,7 +649,7 @@ export const fhtc: string = flexh('tc');
  * }
  * ```
  */
-export const fhtr: string = flexh('tr');
+export const fhtr: string = flexh('tr')
 
 /**
  * ```css
@@ -663,7 +663,7 @@ export const fhtr: string = flexh('tr');
  * }
  * ```
  */
-export const fhts: string = flexh('ts');
+export const fhts: string = flexh('ts')
 
 /**
  * ```css
@@ -677,7 +677,7 @@ export const fhts: string = flexh('ts');
  * }
  * ```
  */
-export const fhcl: string = flexh('cl');
+export const fhcl: string = flexh('cl')
 
 /**
  * ```css
@@ -691,7 +691,7 @@ export const fhcl: string = flexh('cl');
  * }
  * ```
  */
-export const fhcc: string = flexh('cc');
+export const fhcc: string = flexh('cc')
 
 /**
  * ```css
@@ -705,7 +705,7 @@ export const fhcc: string = flexh('cc');
  * }
  * ```
  */
-export const fhcr: string = flexh('cr');
+export const fhcr: string = flexh('cr')
 
 /**
  * ```css
@@ -719,7 +719,7 @@ export const fhcr: string = flexh('cr');
  * }
  * ```
  */
-export const fhcs: string = flexh('cs');
+export const fhcs: string = flexh('cs')
 
 /**
  * ```css
@@ -733,7 +733,7 @@ export const fhcs: string = flexh('cs');
  * }
  * ```
  */
-export const fhbl: string = flexh('bl');
+export const fhbl: string = flexh('bl')
 
 /**
  * ```css
@@ -747,7 +747,7 @@ export const fhbl: string = flexh('bl');
  * }
  * ```
  */
-export const fhbc: string = flexh('bc');
+export const fhbc: string = flexh('bc')
 
 /**
  * ```css
@@ -761,7 +761,7 @@ export const fhbc: string = flexh('bc');
  * }
  * ```
  */
-export const fhbr: string = flexh('br');
+export const fhbr: string = flexh('br')
 
 /**
  * ```css
@@ -775,7 +775,7 @@ export const fhbr: string = flexh('br');
  * }
  * ```
  */
-export const fhbs: string = flexh('bs');
+export const fhbs: string = flexh('bs')
 
 /**
  * ```css
@@ -789,7 +789,7 @@ export const fhbs: string = flexh('bs');
  * }
  * ```
  */
-export const fhsl: string = flexh('sl');
+export const fhsl: string = flexh('sl')
 
 /**
  * ```css
@@ -803,7 +803,7 @@ export const fhsl: string = flexh('sl');
  * }
  * ```
  */
-export const fhsc: string = flexh('sc');
+export const fhsc: string = flexh('sc')
 
 /**
  * ```css
@@ -817,7 +817,7 @@ export const fhsc: string = flexh('sc');
  * }
  * ```
  */
-export const fhsr: string = flexh('sr');
+export const fhsr: string = flexh('sr')
 
 /**
  * ```css
@@ -831,7 +831,7 @@ export const fhsr: string = flexh('sr');
  * }
  * ```
  */
-export const fhss: string = flexh('ss');
+export const fhss: string = flexh('ss')
 
 /**
  * ```css
@@ -845,7 +845,7 @@ export const fhss: string = flexh('ss');
  * }
  * ```
  */
-export const frhtl: string = flexrh('tl');
+export const frhtl: string = flexrh('tl')
 
 /**
  * ```css
@@ -859,7 +859,7 @@ export const frhtl: string = flexrh('tl');
  * }
  * ```
  */
-export const frhtc: string = flexrh('tc');
+export const frhtc: string = flexrh('tc')
 
 /**
  * ```css
@@ -873,7 +873,7 @@ export const frhtc: string = flexrh('tc');
  * }
  * ```
  */
-export const frhtr: string = flexrh('tr');
+export const frhtr: string = flexrh('tr')
 
 /**
  * ```css
@@ -887,7 +887,7 @@ export const frhtr: string = flexrh('tr');
  * }
  * ```
  */
-export const frhts: string = flexrh('ts');
+export const frhts: string = flexrh('ts')
 
 /**
  * ```css
@@ -901,7 +901,7 @@ export const frhts: string = flexrh('ts');
  * }
  * ```
  */
-export const frhcl: string = flexrh('cl');
+export const frhcl: string = flexrh('cl')
 
 /**
  * ```css
@@ -915,7 +915,7 @@ export const frhcl: string = flexrh('cl');
  * }
  * ```
  */
-export const frhcc: string = flexrh('cc');
+export const frhcc: string = flexrh('cc')
 
 /**
  * ```css
@@ -929,7 +929,7 @@ export const frhcc: string = flexrh('cc');
  * }
  * ```
  */
-export const frhcr: string = flexrh('cr');
+export const frhcr: string = flexrh('cr')
 
 /**
  * ```css
@@ -943,7 +943,7 @@ export const frhcr: string = flexrh('cr');
  * }
  * ```
  */
-export const frhcs: string = flexrh('cs');
+export const frhcs: string = flexrh('cs')
 
 /**
  * ```css
@@ -957,7 +957,7 @@ export const frhcs: string = flexrh('cs');
  * }
  * ```
  */
-export const frhbl: string = flexrh('bl');
+export const frhbl: string = flexrh('bl')
 
 /**
  * ```css
@@ -971,7 +971,7 @@ export const frhbl: string = flexrh('bl');
  * }
  * ```
  */
-export const frhbc: string = flexrh('bc');
+export const frhbc: string = flexrh('bc')
 
 /**
  * ```css
@@ -985,7 +985,7 @@ export const frhbc: string = flexrh('bc');
  * }
  * ```
  */
-export const frhbr: string = flexrh('br');
+export const frhbr: string = flexrh('br')
 
 /**
  * ```css
@@ -999,7 +999,7 @@ export const frhbr: string = flexrh('br');
  * }
  * ```
  */
-export const frhbs: string = flexrh('bs');
+export const frhbs: string = flexrh('bs')
 
 /**
  * ```css
@@ -1013,7 +1013,7 @@ export const frhbs: string = flexrh('bs');
  * }
  * ```
  */
-export const frhsl: string = flexrh('sl');
+export const frhsl: string = flexrh('sl')
 
 /**
  * ```css
@@ -1027,7 +1027,7 @@ export const frhsl: string = flexrh('sl');
  * }
  * ```
  */
-export const frhsc: string = flexrh('sc');
+export const frhsc: string = flexrh('sc')
 
 /**
  * ```css
@@ -1041,7 +1041,7 @@ export const frhsc: string = flexrh('sc');
  * }
  * ```
  */
-export const frhsr: string = flexrh('sr');
+export const frhsr: string = flexrh('sr')
 
 /**
  * ```css
@@ -1055,7 +1055,7 @@ export const frhsr: string = flexrh('sr');
  * }
  * ```
  */
-export const frhss: string = flexrh('ss');
+export const frhss: string = flexrh('ss')
 
 /**
  * ```css
@@ -1069,7 +1069,7 @@ export const frhss: string = flexrh('ss');
  * }
  * ````
  */
-export const fvtl: string = flexv('tl');
+export const fvtl: string = flexv('tl')
 
 /**
  * ```css
@@ -1083,7 +1083,7 @@ export const fvtl: string = flexv('tl');
  * }
  * ````
  */
-export const fvtc: string = flexv('tc');
+export const fvtc: string = flexv('tc')
 
 /**
  * ```css
@@ -1097,7 +1097,7 @@ export const fvtc: string = flexv('tc');
  * }
  * ````
  */
-export const fvtr: string = flexv('tr');
+export const fvtr: string = flexv('tr')
 
 /**
  * ```css
@@ -1111,7 +1111,7 @@ export const fvtr: string = flexv('tr');
  * }
  * ````
  */
-export const fvts: string = flexv('ts');
+export const fvts: string = flexv('ts')
 
 /**
  * ```css
@@ -1125,7 +1125,7 @@ export const fvts: string = flexv('ts');
  * }
  * ````
  */
-export const fvcl: string = flexv('cl');
+export const fvcl: string = flexv('cl')
 
 /**
  * ```css
@@ -1139,7 +1139,7 @@ export const fvcl: string = flexv('cl');
  * }
  * ````
  */
-export const fvcc: string = flexv('cc');
+export const fvcc: string = flexv('cc')
 
 /**
  * ```css
@@ -1153,7 +1153,7 @@ export const fvcc: string = flexv('cc');
  * }
  * ````
  */
-export const fvcr: string = flexv('cr');
+export const fvcr: string = flexv('cr')
 
 /**
  * ```css
@@ -1167,7 +1167,7 @@ export const fvcr: string = flexv('cr');
  * }
  * ````
  */
-export const fvcs: string = flexv('cs');
+export const fvcs: string = flexv('cs')
 
 /**
  * ```css
@@ -1181,7 +1181,7 @@ export const fvcs: string = flexv('cs');
  * }
  * ````
  */
-export const fvbl: string = flexv('bl');
+export const fvbl: string = flexv('bl')
 
 /**
  * ```css
@@ -1195,7 +1195,7 @@ export const fvbl: string = flexv('bl');
  * }
  * ````
  */
-export const fvbc: string = flexv('bc');
+export const fvbc: string = flexv('bc')
 
 /**
  * ```css
@@ -1209,7 +1209,7 @@ export const fvbc: string = flexv('bc');
  * }
  * ````
  */
-export const fvbr: string = flexv('br');
+export const fvbr: string = flexv('br')
 
 /**
  * ```css
@@ -1223,7 +1223,7 @@ export const fvbr: string = flexv('br');
  * }
  * ````
  */
-export const fvbs: string = flexv('bs');
+export const fvbs: string = flexv('bs')
 
 /**
  * ```css
@@ -1237,7 +1237,7 @@ export const fvbs: string = flexv('bs');
  * }
  * ````
  */
-export const fvsl: string = flexv('sl');
+export const fvsl: string = flexv('sl')
 
 /**
  * ```css
@@ -1251,7 +1251,7 @@ export const fvsl: string = flexv('sl');
  * }
  * ````
  */
-export const fvsc: string = flexv('sc');
+export const fvsc: string = flexv('sc')
 
 /**
  * ```css
@@ -1265,7 +1265,7 @@ export const fvsc: string = flexv('sc');
  * }
  * ````
  */
-export const fvsr: string = flexv('sr');
+export const fvsr: string = flexv('sr')
 
 /**
  * ```css
@@ -1279,7 +1279,7 @@ export const fvsr: string = flexv('sr');
  * }
  * ````
  */
-export const fvss: string = flexv('ss');
+export const fvss: string = flexv('ss')
 
 /**
  * ```css
@@ -1293,7 +1293,7 @@ export const fvss: string = flexv('ss');
  * }
  * ```
  */
-export const frvtl: string = flexrv('tl');
+export const frvtl: string = flexrv('tl')
 
 /**
  * ```css
@@ -1307,7 +1307,7 @@ export const frvtl: string = flexrv('tl');
  * }
  * ```
  */
-export const frvtc: string = flexrv('tc');
+export const frvtc: string = flexrv('tc')
 
 /**
  * ```css
@@ -1321,7 +1321,7 @@ export const frvtc: string = flexrv('tc');
  * }
  * ```
  */
-export const frvtr: string = flexrv('tr');
+export const frvtr: string = flexrv('tr')
 
 /**
  * ```css
@@ -1335,7 +1335,7 @@ export const frvtr: string = flexrv('tr');
  * }
  * ```
  */
-export const frvts: string = flexrv('ts');
+export const frvts: string = flexrv('ts')
 
 /**
  * ```css
@@ -1349,7 +1349,7 @@ export const frvts: string = flexrv('ts');
  * }
  * ```
  */
-export const frvcl: string = flexrv('cl');
+export const frvcl: string = flexrv('cl')
 
 /**
  * ```css
@@ -1363,7 +1363,7 @@ export const frvcl: string = flexrv('cl');
  * }
  * ```
  */
-export const frvcc: string = flexrv('cc');
+export const frvcc: string = flexrv('cc')
 
 /**
  * ```css
@@ -1377,7 +1377,7 @@ export const frvcc: string = flexrv('cc');
  * }
  * ```
  */
-export const frvcr: string = flexrv('cr');
+export const frvcr: string = flexrv('cr')
 
 /**
  * ```css
@@ -1391,7 +1391,7 @@ export const frvcr: string = flexrv('cr');
  * }
  * ```
  */
-export const frvcs: string = flexrv('cs');
+export const frvcs: string = flexrv('cs')
 
 /**
  * ```css
@@ -1405,7 +1405,7 @@ export const frvcs: string = flexrv('cs');
  * }
  * ```
  */
-export const frvbl: string = flexrv('bl');
+export const frvbl: string = flexrv('bl')
 
 /**
  * ```css
@@ -1419,7 +1419,7 @@ export const frvbl: string = flexrv('bl');
  * }
  * ```
  */
-export const frvbc: string = flexrv('bc');
+export const frvbc: string = flexrv('bc')
 
 /**
  * ```css
@@ -1433,7 +1433,7 @@ export const frvbc: string = flexrv('bc');
  * }
  * ```
  */
-export const frvbr: string = flexrv('br');
+export const frvbr: string = flexrv('br')
 
 /**
  * ```css
@@ -1447,7 +1447,7 @@ export const frvbr: string = flexrv('br');
  * }
  * ```
  */
-export const frvbs: string = flexrv('bs');
+export const frvbs: string = flexrv('bs')
 
 /**
  * ```css
@@ -1461,7 +1461,7 @@ export const frvbs: string = flexrv('bs');
  * }
  * ```
  */
-export const frvsl: string = flexrv('sl');
+export const frvsl: string = flexrv('sl')
 
 /**
  * ```css
@@ -1475,7 +1475,7 @@ export const frvsl: string = flexrv('sl');
  * }
  * ```
  */
-export const frvsc: string = flexrv('sc');
+export const frvsc: string = flexrv('sc')
 
 /**
  * ```css
@@ -1489,7 +1489,7 @@ export const frvsc: string = flexrv('sc');
  * }
  * ```
  */
-export const frvsr: string = flexrv('sr');
+export const frvsr: string = flexrv('sr')
 
 /**
  * ```css
@@ -1503,21 +1503,7 @@ export const frvsr: string = flexrv('sr');
  * }
  * ```
  */
-export const frvss: string = flexrv('ss');
-
-/**
- * ```css
- * {
- *   align-items: flex-start;
- *   box-sizing: border-box;
- *   display: inline-flex;
- *   flex-direction: row;
- *   flex-wrap: nowrap;
- *   justify-content: flex-start;
- * }
- * ```
- */
-export const ifhtl: string = flexh('tl', true);
+export const frvss: string = flexrv('ss')
 
 /**
  * ```css
@@ -1527,11 +1513,25 @@ export const ifhtl: string = flexh('tl', true);
  *   display: inline-flex;
  *   flex-direction: row;
  *   flex-wrap: nowrap;
+ *   justify-content: flex-start;
+ * }
+ * ```
+ */
+export const ifhtl: string = flexh('tl', true)
+
+/**
+ * ```css
+ * {
+ *   align-items: flex-start;
+ *   box-sizing: border-box;
+ *   display: inline-flex;
+ *   flex-direction: row;
+ *   flex-wrap: nowrap;
  *   justify-content: center;
  * }
  * ```
  */
-export const ifhtc: string = flexh('tc', true);
+export const ifhtc: string = flexh('tc', true)
 
 /**
  * ```css
@@ -1545,7 +1545,7 @@ export const ifhtc: string = flexh('tc', true);
  * }
  * ```
  */
-export const ifhtr: string = flexh('tr', true);
+export const ifhtr: string = flexh('tr', true)
 
 /**
  * ```css
@@ -1559,7 +1559,7 @@ export const ifhtr: string = flexh('tr', true);
  * }
  * ```
  */
-export const ifhts: string = flexh('ts', true);
+export const ifhts: string = flexh('ts', true)
 
 /**
  * ```css
@@ -1573,7 +1573,7 @@ export const ifhts: string = flexh('ts', true);
  * }
  * ```
  */
-export const ifhcl: string = flexh('cl', true);
+export const ifhcl: string = flexh('cl', true)
 
 /**
  * ```css
@@ -1587,7 +1587,7 @@ export const ifhcl: string = flexh('cl', true);
  * }
  * ```
  */
-export const ifhcc: string = flexh('cc', true);
+export const ifhcc: string = flexh('cc', true)
 
 /**
  * ```css
@@ -1601,7 +1601,7 @@ export const ifhcc: string = flexh('cc', true);
  * }
  * ```
  */
-export const ifhcr: string = flexh('cr', true);
+export const ifhcr: string = flexh('cr', true)
 
 /**
  * ```css
@@ -1615,7 +1615,7 @@ export const ifhcr: string = flexh('cr', true);
  * }
  * ```
  */
-export const ifhcs: string = flexh('cs', true);
+export const ifhcs: string = flexh('cs', true)
 
 /**
  * ```css
@@ -1629,7 +1629,7 @@ export const ifhcs: string = flexh('cs', true);
  * }
  * ```
  */
-export const ifhbl: string = flexh('bl', true);
+export const ifhbl: string = flexh('bl', true)
 
 /**
  * ```css
@@ -1643,7 +1643,7 @@ export const ifhbl: string = flexh('bl', true);
  * }
  * ```
  */
-export const ifhbc: string = flexh('bc', true);
+export const ifhbc: string = flexh('bc', true)
 
 /**
  * ```css
@@ -1657,7 +1657,7 @@ export const ifhbc: string = flexh('bc', true);
  * }
  * ```
  */
-export const ifhbr: string = flexh('br', true);
+export const ifhbr: string = flexh('br', true)
 
 /**
  * ```css
@@ -1671,7 +1671,7 @@ export const ifhbr: string = flexh('br', true);
  * }
  * ```
  */
-export const ifhbs: string = flexh('bs', true);
+export const ifhbs: string = flexh('bs', true)
 
 /**
  * ```css
@@ -1685,7 +1685,7 @@ export const ifhbs: string = flexh('bs', true);
  * }
  * ```
  */
-export const ifhsl: string = flexh('sl', true);
+export const ifhsl: string = flexh('sl', true)
 
 /**
  * ```css
@@ -1699,7 +1699,7 @@ export const ifhsl: string = flexh('sl', true);
  * }
  * ```
  */
-export const ifhsc: string = flexh('sc', true);
+export const ifhsc: string = flexh('sc', true)
 
 /**
  * ```css
@@ -1713,7 +1713,7 @@ export const ifhsc: string = flexh('sc', true);
  * }
  * ```
  */
-export const ifhsr: string = flexh('sr', true);
+export const ifhsr: string = flexh('sr', true)
 
 /**
  * ```css
@@ -1727,7 +1727,7 @@ export const ifhsr: string = flexh('sr', true);
  * }
  * ```
  */
-export const ifhss: string = flexh('ss', true);
+export const ifhss: string = flexh('ss', true)
 
 /**
  * ```css
@@ -1741,7 +1741,7 @@ export const ifhss: string = flexh('ss', true);
  * }
  * ```
  */
-export const ifrhtl: string = flexrh('tl', true);
+export const ifrhtl: string = flexrh('tl', true)
 
 /**
  * ```css
@@ -1755,7 +1755,7 @@ export const ifrhtl: string = flexrh('tl', true);
  * }
  * ```
  */
-export const ifrhtc: string = flexrh('tc', true);
+export const ifrhtc: string = flexrh('tc', true)
 
 /**
  * ```css
@@ -1769,7 +1769,7 @@ export const ifrhtc: string = flexrh('tc', true);
  * }
  * ```
  */
-export const ifrhtr: string = flexrh('tr', true);
+export const ifrhtr: string = flexrh('tr', true)
 
 /**
  * ```css
@@ -1783,7 +1783,7 @@ export const ifrhtr: string = flexrh('tr', true);
  * }
  * ```
  */
-export const ifrhts: string = flexrh('ts', true);
+export const ifrhts: string = flexrh('ts', true)
 
 /**
  * ```css
@@ -1797,7 +1797,7 @@ export const ifrhts: string = flexrh('ts', true);
  * }
  * ```
  */
-export const ifrhcl: string = flexrh('cl', true);
+export const ifrhcl: string = flexrh('cl', true)
 
 /**
  * ```css
@@ -1811,7 +1811,7 @@ export const ifrhcl: string = flexrh('cl', true);
  * }
  * ```
  */
-export const ifrhcc: string = flexrh('cc', true);
+export const ifrhcc: string = flexrh('cc', true)
 
 /**
  * ```css
@@ -1825,7 +1825,7 @@ export const ifrhcc: string = flexrh('cc', true);
  * }
  * ```
  */
-export const ifrhcr: string = flexrh('cr', true);
+export const ifrhcr: string = flexrh('cr', true)
 
 /**
  * ```css
@@ -1839,7 +1839,7 @@ export const ifrhcr: string = flexrh('cr', true);
  * }
  * ```
  */
-export const ifrhcs: string = flexrh('cs', true);
+export const ifrhcs: string = flexrh('cs', true)
 
 /**
  * ```css
@@ -1853,7 +1853,7 @@ export const ifrhcs: string = flexrh('cs', true);
  * }
  * ```
  */
-export const ifrhbl: string = flexrh('bl', true);
+export const ifrhbl: string = flexrh('bl', true)
 
 /**
  * ```css
@@ -1867,7 +1867,7 @@ export const ifrhbl: string = flexrh('bl', true);
  * }
  * ```
  */
-export const ifrhbc: string = flexrh('bc', true);
+export const ifrhbc: string = flexrh('bc', true)
 
 /**
  * ```css
@@ -1881,7 +1881,7 @@ export const ifrhbc: string = flexrh('bc', true);
  * }
  * ```
  */
-export const ifrhbr: string = flexrh('br', true);
+export const ifrhbr: string = flexrh('br', true)
 
 /**
  * ```css
@@ -1895,7 +1895,7 @@ export const ifrhbr: string = flexrh('br', true);
  * }
  * ```
  */
-export const ifrhbs: string = flexrh('bs', true);
+export const ifrhbs: string = flexrh('bs', true)
 
 /**
  * ```css
@@ -1909,7 +1909,7 @@ export const ifrhbs: string = flexrh('bs', true);
  * }
  * ```
  */
-export const ifrhsl: string = flexrh('sl', true);
+export const ifrhsl: string = flexrh('sl', true)
 
 /**
  * ```css
@@ -1923,7 +1923,7 @@ export const ifrhsl: string = flexrh('sl', true);
  * }
  * ```
  */
-export const ifrhsc: string = flexrh('sc', true);
+export const ifrhsc: string = flexrh('sc', true)
 
 /**
  * ```css
@@ -1937,7 +1937,7 @@ export const ifrhsc: string = flexrh('sc', true);
  * }
  * ```
  */
-export const ifrhsr: string = flexrh('sr', true);
+export const ifrhsr: string = flexrh('sr', true)
 
 /**
  * ```css
@@ -1951,7 +1951,7 @@ export const ifrhsr: string = flexrh('sr', true);
  * }
  * ```
  */
-export const ifrhss: string = flexrh('ss', true);
+export const ifrhss: string = flexrh('ss', true)
 
 /**
  * ```css
@@ -1965,7 +1965,7 @@ export const ifrhss: string = flexrh('ss', true);
  * }
  * ````
  */
-export const ifvtl: string = flexv('tl', true);
+export const ifvtl: string = flexv('tl', true)
 
 /**
  * ```css
@@ -1979,7 +1979,7 @@ export const ifvtl: string = flexv('tl', true);
  * }
  * ````
  */
-export const ifvtc: string = flexv('tc', true);
+export const ifvtc: string = flexv('tc', true)
 
 /**
  * ```css
@@ -1993,7 +1993,7 @@ export const ifvtc: string = flexv('tc', true);
  * }
  * ````
  */
-export const ifvtr: string = flexv('tr', true);
+export const ifvtr: string = flexv('tr', true)
 
 /**
  * ```css
@@ -2007,7 +2007,7 @@ export const ifvtr: string = flexv('tr', true);
  * }
  * ````
  */
-export const ifvts: string = flexv('ts', true);
+export const ifvts: string = flexv('ts', true)
 
 /**
  * ```css
@@ -2021,7 +2021,7 @@ export const ifvts: string = flexv('ts', true);
  * }
  * ````
  */
-export const ifvcl: string = flexv('cl', true);
+export const ifvcl: string = flexv('cl', true)
 
 /**
  * ```css
@@ -2035,7 +2035,7 @@ export const ifvcl: string = flexv('cl', true);
  * }
  * ````
  */
-export const ifvcc: string = flexv('cc', true);
+export const ifvcc: string = flexv('cc', true)
 
 /**
  * ```css
@@ -2049,7 +2049,7 @@ export const ifvcc: string = flexv('cc', true);
  * }
  * ````
  */
-export const ifvcr: string = flexv('cr', true);
+export const ifvcr: string = flexv('cr', true)
 
 /**
  * ```css
@@ -2063,7 +2063,7 @@ export const ifvcr: string = flexv('cr', true);
  * }
  * ````
  */
-export const ifvcs: string = flexv('cs', true);
+export const ifvcs: string = flexv('cs', true)
 
 /**
  * ```css
@@ -2077,7 +2077,7 @@ export const ifvcs: string = flexv('cs', true);
  * }
  * ````
  */
-export const ifvbl: string = flexv('bl', true);
+export const ifvbl: string = flexv('bl', true)
 
 /**
  * ```css
@@ -2091,7 +2091,7 @@ export const ifvbl: string = flexv('bl', true);
  * }
  * ````
  */
-export const ifvbc: string = flexv('bc', true);
+export const ifvbc: string = flexv('bc', true)
 
 /**
  * ```css
@@ -2105,7 +2105,7 @@ export const ifvbc: string = flexv('bc', true);
  * }
  * ````
  */
-export const ifvbr: string = flexv('br', true);
+export const ifvbr: string = flexv('br', true)
 
 /**
  * ```css
@@ -2119,7 +2119,7 @@ export const ifvbr: string = flexv('br', true);
  * }
  * ````
  */
-export const ifvbs: string = flexv('bs', true);
+export const ifvbs: string = flexv('bs', true)
 
 /**
  * ```css
@@ -2133,7 +2133,7 @@ export const ifvbs: string = flexv('bs', true);
  * }
  * ````
  */
-export const ifvsl: string = flexv('sl', true);
+export const ifvsl: string = flexv('sl', true)
 
 /**
  * ```css
@@ -2147,7 +2147,7 @@ export const ifvsl: string = flexv('sl', true);
  * }
  * ````
  */
-export const ifvsc: string = flexv('sc', true);
+export const ifvsc: string = flexv('sc', true)
 
 /**
  * ```css
@@ -2161,7 +2161,7 @@ export const ifvsc: string = flexv('sc', true);
  * }
  * ````
  */
-export const ifvsr: string = flexv('sr', true);
+export const ifvsr: string = flexv('sr', true)
 
 /**
  * ```css
@@ -2175,7 +2175,7 @@ export const ifvsr: string = flexv('sr', true);
  * }
  * ````
  */
-export const ifvss: string = flexv('ss', true);
+export const ifvss: string = flexv('ss', true)
 
 /**
  * ```css
@@ -2189,7 +2189,7 @@ export const ifvss: string = flexv('ss', true);
  * }
  * ```
  */
-export const ifrvtl: string = flexrv('tl', true);
+export const ifrvtl: string = flexrv('tl', true)
 
 /**
  * ```css
@@ -2203,7 +2203,7 @@ export const ifrvtl: string = flexrv('tl', true);
  * }
  * ```
  */
-export const ifrvtc: string = flexrv('tc', true);
+export const ifrvtc: string = flexrv('tc', true)
 
 /**
  * ```css
@@ -2217,7 +2217,7 @@ export const ifrvtc: string = flexrv('tc', true);
  * }
  * ```
  */
-export const ifrvtr: string = flexrv('tr', true);
+export const ifrvtr: string = flexrv('tr', true)
 
 /**
  * ```css
@@ -2231,7 +2231,7 @@ export const ifrvtr: string = flexrv('tr', true);
  * }
  * ```
  */
-export const ifrvts: string = flexrv('ts', true);
+export const ifrvts: string = flexrv('ts', true)
 
 /**
  * ```css
@@ -2245,7 +2245,7 @@ export const ifrvts: string = flexrv('ts', true);
  * }
  * ```
  */
-export const ifrvcl: string = flexrv('cl', true);
+export const ifrvcl: string = flexrv('cl', true)
 
 /**
  * ```css
@@ -2259,7 +2259,7 @@ export const ifrvcl: string = flexrv('cl', true);
  * }
  * ```
  */
-export const ifrvcc: string = flexrv('cc', true);
+export const ifrvcc: string = flexrv('cc', true)
 
 /**
  * ```css
@@ -2273,7 +2273,7 @@ export const ifrvcc: string = flexrv('cc', true);
  * }
  * ```
  */
-export const ifrvcr: string = flexrv('cr', true);
+export const ifrvcr: string = flexrv('cr', true)
 
 /**
  * ```css
@@ -2287,7 +2287,7 @@ export const ifrvcr: string = flexrv('cr', true);
  * }
  * ```
  */
-export const ifrvcs: string = flexrv('cs', true);
+export const ifrvcs: string = flexrv('cs', true)
 
 /**
  * ```css
@@ -2301,7 +2301,7 @@ export const ifrvcs: string = flexrv('cs', true);
  * }
  * ```
  */
-export const ifrvbl: string = flexrv('bl', true);
+export const ifrvbl: string = flexrv('bl', true)
 
 /**
  * ```css
@@ -2315,7 +2315,7 @@ export const ifrvbl: string = flexrv('bl', true);
  * }
  * ```
  */
-export const ifrvbc: string = flexrv('bc', true);
+export const ifrvbc: string = flexrv('bc', true)
 
 /**
  * ```css
@@ -2329,7 +2329,7 @@ export const ifrvbc: string = flexrv('bc', true);
  * }
  * ```
  */
-export const ifrvbr: string = flexrv('br', true);
+export const ifrvbr: string = flexrv('br', true)
 
 /**
  * ```css
@@ -2343,7 +2343,7 @@ export const ifrvbr: string = flexrv('br', true);
  * }
  * ```
  */
-export const ifrvbs: string = flexrv('bs', true);
+export const ifrvbs: string = flexrv('bs', true)
 
 /**
  * ```css
@@ -2357,7 +2357,7 @@ export const ifrvbs: string = flexrv('bs', true);
  * }
  * ```
  */
-export const ifrvsl: string = flexrv('sl', true);
+export const ifrvsl: string = flexrv('sl', true)
 
 /**
  * ```css
@@ -2371,7 +2371,7 @@ export const ifrvsl: string = flexrv('sl', true);
  * }
  * ```
  */
-export const ifrvsc: string = flexrv('sc', true);
+export const ifrvsc: string = flexrv('sc', true)
 
 /**
  * ```css
@@ -2385,7 +2385,7 @@ export const ifrvsc: string = flexrv('sc', true);
  * }
  * ```
  */
-export const ifrvsr: string = flexrv('sr', true);
+export const ifrvsr: string = flexrv('sr', true)
 
 /**
  * ```css
@@ -2399,4 +2399,4 @@ export const ifrvsr: string = flexrv('sr', true);
  * }
  * ```
  */
-export const ifrvss: string = flexrv('ss', true);
+export const ifrvss: string = flexrv('ss', true)

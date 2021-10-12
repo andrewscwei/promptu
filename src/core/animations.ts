@@ -1,5 +1,5 @@
-import minify from '../utils/minify';
-import { toCSSProperty } from './utils';
+import minify from '../utils/minify'
+import { toCSSProperty } from './utils'
 
 /**
  * Applies CSS transition rules.
@@ -17,5 +17,5 @@ export function transition(property: string | string[], duration: number | strin
     transition-duration: ${toCSSProperty(duration, 'ms')};
     transition-timing-function: ${toCSSProperty(timingFunction)};
     transition-delay: ${toCSSProperty(delay, 'ms')};
-  `);
+  `)
 }

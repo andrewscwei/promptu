@@ -1,5 +1,5 @@
-import { FontDisplay, FontStyle, FontVariant, FontWeight, LetterSpacing, LineHeight } from '../types';
-import minify from '../utils/minify';
+import { FontDisplay, FontStyle, FontVariant, FontWeight, LetterSpacing, LineHeight } from '../types'
+import minify from '../utils/minify'
 
 /**
  * All supported font weights.
@@ -28,7 +28,7 @@ export const fontWeights: { [key: string]: FontWeight } = {
   bold: 700,
   extraBold: 800,
   black: 900,
-};
+}
 
 /**
  * Infers the font format from a font file extension. Supported extensions
@@ -39,30 +39,30 @@ export const fontWeights: { [key: string]: FontWeight } = {
  * @return The font format. Defaults to `opentype` if unable to infer.
  */
 export function getFontFormatFromPath(path: string): string {
-  const ext = path.split('.').pop();
+  const ext = path.split('.').pop()
 
-  if (!ext) return 'opentype';
+  if (!ext) return 'opentype'
 
   if (ext.startsWith('eot')) {
-    return 'eot';
+    return 'eot'
   }
   else if (ext.startsWith('woff2')) {
-    return 'woff2';
+    return 'woff2'
   }
   else if (ext.startsWith('woff')) {
-    return 'woff';
+    return 'woff'
   }
   else if (ext.startsWith('ttf')) {
-    return 'truetype';
+    return 'truetype'
   }
   else if (ext.startsWith('otf')) {
-    return 'opentype';
+    return 'opentype'
   }
   else if (ext.startsWith('svg')) {
-    return 'svg';
+    return 'svg'
   }
 
-  return 'opentype';
+  return 'opentype'
 }
 
 /**
@@ -74,18 +74,18 @@ export function getFontFormatFromPath(path: string): string {
  *         infer.
  */
 export function getFontStyleFromPath(path: string): string {
-  const basename = path.split('/').pop();
+  const basename = path.split('/').pop()
 
-  if (!basename) return 'normal';
+  if (!basename) return 'normal'
 
   if (~basename.search(/italic/i)) {
-    return 'italic';
+    return 'italic'
   }
   else if (~basename.search(/oblique/i)) {
-    return 'oblique';
+    return 'oblique'
   }
   else {
-    return 'normal';
+    return 'normal'
   }
 }
 
@@ -97,39 +97,39 @@ export function getFontStyleFromPath(path: string): string {
  * @return The font weight of the font file. Defaults to normal (400).
  */
 export function getFontWeightFromPath(path: string): FontWeight {
-  const basename = path.split('/').pop();
+  const basename = path.split('/').pop()
 
-  if (!basename) return 'normal';
+  if (!basename) return 'normal'
 
   if (~basename.search(/thin/i)) {
-    return fontWeights.thin;
+    return fontWeights.thin
   }
   else if (~basename.search(/extralight/i)) {
-    return fontWeights.extraLight;
+    return fontWeights.extraLight
   }
   else if (~basename.search(/light/i)) {
-    return fontWeights.light;
+    return fontWeights.light
   }
   else if (~basename.search(/regular/i) || ~basename.search(/normal/i)) {
-    return fontWeights.normal;
+    return fontWeights.normal
   }
   else if (~basename.search(/medium/i)) {
-    return fontWeights.medium;
+    return fontWeights.medium
   }
   else if (~basename.search(/semibold/i)) {
-    return fontWeights.semiBold;
+    return fontWeights.semiBold
   }
   else if (~basename.search(/extrabold/i)) {
-    return fontWeights.extraBold;
+    return fontWeights.extraBold
   }
   else if (~basename.search(/bold/i)) {
-    return fontWeights.bold;
+    return fontWeights.bold
   }
   else if (~basename.search(/black/i)) {
-    return fontWeights.black;
+    return fontWeights.black
   }
   else {
-    return fontWeights.normal;
+    return fontWeights.normal
   }
 }
 
@@ -169,7 +169,7 @@ export function fontFace(family: string, src: string, weight?: FontWeight, style
       font-weight: ${weight || getFontWeightFromPath(src)};
       font-display: ${display || 'auto'};
     }
-  `);
+  `)
 }
 
 /**
@@ -214,5 +214,5 @@ export function font(family: string, size: string | number = '1.6rem', weight: F
     font-variant: ${variant};
     line-height: ${typeof lineHeight === 'number' ? `${lineHeight}rem` : lineHeight};
     letter-spacing: ${typeof letterSpacing === 'number' ? `${letterSpacing}rem` : letterSpacing};
-  `);
+  `)
 }

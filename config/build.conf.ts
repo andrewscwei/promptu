@@ -1,7 +1,7 @@
-import path from 'path';
-import { Configuration } from 'webpack';
+import path from 'path'
+import { Configuration } from 'webpack'
 
-const cwd = path.join(__dirname, '../');
+const cwd = path.join(__dirname, '../')
 
 const config: Configuration = {
   devtool: 'source-map',
@@ -39,6 +39,6 @@ const config: Configuration = {
     timings: true,
   },
   target: 'node',
-};
+}
 
-export default config;
+export default config

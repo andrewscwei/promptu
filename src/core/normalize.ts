@@ -1,4 +1,4 @@
-import minify from '../utils/minify';
+import minify from '../utils/minify'
 
 /**
  * Normalizes CSS consistently across all major browsers.
@@ -574,5 +574,5 @@ export default function(): string {
     html:not(.supports-no-cookies) .supports-no-cookies {
       display: none !important;
     }
-  `);
+  `)
 }

@@ -1,5 +1,5 @@
-import { Alignment } from '../types';
-import minify from '../utils/minify';
+import { Alignment } from '../types'
+import minify from '../utils/minify'
 
 /**
  * Applies horizontal margins to an element.
@@ -20,11 +20,11 @@ import minify from '../utils/minify';
  * }
  * ```
  */
-export function horizontalMargin(value: string) {
+export function horizontalMargin(value: string): string {
   return minify(`
     margin-left: ${value};
     margin-right: ${value};
-  `);
+  `)
 }
 
 /**
@@ -46,11 +46,11 @@ export function horizontalMargin(value: string) {
  * }
  * ```
  */
-export function verticalMargin(value: string) {
+export function verticalMargin(value: string): string {
   return minify(`
     margin-left: ${value};
     margin-right: ${value};
-  `);
+  `)
 }
 
 /**
@@ -72,11 +72,11 @@ export function verticalMargin(value: string) {
  * }
  * ```
  */
-export function horizontalPadding(value: string) {
+export function horizontalPadding(value: string) : string{
   return minify(`
     padding-left: ${value};
     padding-right: ${value};
-  `);
+  `)
 }
 
 /**
@@ -98,11 +98,11 @@ export function horizontalPadding(value: string) {
  * }
  * ```
  */
-export function verticalPadding(value: string) {
+export function verticalPadding(value: string): string {
   return minify(`
     padding-top: ${value};
     padding-bottom: ${value};
-  `);
+  `)
 }
 
 /**
@@ -124,7 +124,7 @@ export function verticalPadding(value: string) {
  * }
  * ```
  */
-export const hm = horizontalMargin;
+export const hm = horizontalMargin
 
 /**
  * Applies vertical margins to an element.
@@ -145,7 +145,7 @@ export const hm = horizontalMargin;
  * }
  * ```
  */
-export const vm = verticalMargin;
+export const vm = verticalMargin
 
 /**
  * Applies horizontal paddings to an element.
@@ -166,7 +166,7 @@ export const vm = verticalMargin;
  * }
  * ```
  */
-export const hp = horizontalPadding;
+export const hp = horizontalPadding
 
 /**
  * Applies vertical paddings to an element.
@@ -187,7 +187,7 @@ export const hp = horizontalPadding;
  * }
  * ```
  */
-export const vp = verticalPadding;
+export const vp = verticalPadding
 
 /**
  * Applies absolute alignment to an element.
@@ -213,7 +213,7 @@ export const vp = verticalPadding;
  * ```
  */
 export function abs(alignment: Alignment = 'cc'): string {
-  let t;
+  let t
 
   switch (alignment) {
   case 'tl':
@@ -223,8 +223,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: unset;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'tc':
     t = `
       bottom: unset;
@@ -232,8 +232,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: 0 auto;
       right: 0;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'tr':
     t = `
       bottom: unset;
@@ -241,8 +241,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: 0;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'cl':
     t = `
       bottom: 0;
@@ -250,8 +250,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: auto 0;
       right: unset;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'cr':
     t = `
       bottom: 0;
@@ -259,8 +259,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: auto 0;
       right: 0;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'bl':
     t = `
       bottom: 0;
@@ -268,8 +268,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: unset;
       top: unset;
-    `;
-    break;
+    `
+    break
   case 'bc':
     t = `
       bottom: 0;
@@ -277,8 +277,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: 0 auto;
       right: 0;
       top: unset;
-    `;
-    break;
+    `
+    break
   case 'br':
     t = `
       bottom: 0;
@@ -286,8 +286,8 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: 0;
       top: unset;
-    `;
-    break;
+    `
+    break
   default:
     t = `
       bottom: 0;
@@ -295,13 +295,13 @@ export function abs(alignment: Alignment = 'cc'): string {
       margin: auto;
       right: 0;
       top: 0;
-    `;
+    `
   }
 
   return minify(`
     ${t}
     position: absolute;
-  `);
+  `)
 }
 
 /**
@@ -328,7 +328,7 @@ export function abs(alignment: Alignment = 'cc'): string {
  * ```
  */
 export function fixed(alignment: Alignment = 'cc'): string {
-  let t;
+  let t
 
   switch (alignment) {
   case 'tl':
@@ -338,8 +338,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: unset;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'tc':
     t = `
       bottom: unset;
@@ -347,8 +347,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: 0 auto;
       right: 0;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'tr':
     t = `
       bottom: unset;
@@ -356,8 +356,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: 0;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'cl':
     t = `
       bottom: 0;
@@ -365,8 +365,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: auto 0;
       right: unset;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'cr':
     t = `
       bottom: 0;
@@ -374,8 +374,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: auto 0;
       right: 0;
       top: 0;
-    `;
-    break;
+    `
+    break
   case 'bl':
     t = `
       bottom: 0;
@@ -383,8 +383,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: unset;
       top: unset;
-    `;
-    break;
+    `
+    break
   case 'bc':
     t = `
       bottom: 0;
@@ -392,8 +392,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: 0 auto;
       right: 0;
       top: unset;
-    `;
-    break;
+    `
+    break
   case 'br':
     t = `
       bottom: 0;
@@ -401,8 +401,8 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: 0;
       right: 0;
       top: unset;
-    `;
-    break;
+    `
+    break
   default:
     t = `
       bottom: 0;
@@ -410,13 +410,13 @@ export function fixed(alignment: Alignment = 'cc'): string {
       margin: auto;
       right: 0;
       top: 0;
-    `;
+    `
   }
 
   return minify(`
     ${t}
     position: fixed;
-  `);
+  `)
 }
 
 /**
@@ -431,7 +431,7 @@ export function fixed(alignment: Alignment = 'cc'): string {
  * }
  * ```
  */
-export const tl = abs('tl');
+export const tl: string = abs('tl')
 
 /**
  * ```css
@@ -445,7 +445,7 @@ export const tl = abs('tl');
  * }
  * ```
  */
-export const tc = abs('tc');
+export const tc: string = abs('tc')
 
 /**
  * ```css
@@ -459,7 +459,7 @@ export const tc = abs('tc');
  * }
  * ```
  */
-export const tr = abs('tr');
+export const tr: string = abs('tr')
 
 /**
  * ```css
@@ -473,7 +473,7 @@ export const tr = abs('tr');
  * }
  * ```
  */
-export const cl = abs('cl');
+export const cl: string = abs('cl')
 
 /**
  * ```css
@@ -487,7 +487,7 @@ export const cl = abs('cl');
  * }
  * ```
  */
-export const cc = abs('cc');
+export const cc: string = abs('cc')
 
 /**
  * ```css
@@ -501,7 +501,7 @@ export const cc = abs('cc');
  * }
  * ```
  */
-export const cr = abs('cr');
+export const cr: string = abs('cr')
 
 /**
  * ```css
@@ -515,7 +515,7 @@ export const cr = abs('cr');
  * }
  * ```
  */
-export const bl = abs('bl');
+export const bl: string = abs('bl')
 
 /**
  * ```css
@@ -529,7 +529,7 @@ export const bl = abs('bl');
  * }
  * ```
  */
-export const bc = abs('bc');
+export const bc: string = abs('bc')
 
 /**
  * ```css
@@ -543,7 +543,7 @@ export const bc = abs('bc');
  * }
  * ```
  */
-export const br = abs('br');
+export const br: string = abs('br')
 
 /**
  * ```css
@@ -557,7 +557,7 @@ export const br = abs('br');
  * }
  * ```
  */
-export const ftl = fixed('tl');
+export const ftl: string = fixed('tl')
 
 /**
  * ```css
@@ -571,7 +571,7 @@ export const ftl = fixed('tl');
  * }
  * ```
  */
-export const ftc = fixed('tc');
+export const ftc: string = fixed('tc')
 
 /**
  * ```css
@@ -585,7 +585,7 @@ export const ftc = fixed('tc');
  * }
  * ```
  */
-export const ftr = fixed('tr');
+export const ftr: string = fixed('tr')
 
 /**
  * ```css
@@ -599,7 +599,7 @@ export const ftr = fixed('tr');
  * }
  * ```
  */
-export const fcl = fixed('cl');
+export const fcl: string = fixed('cl')
 
 /**
  * ```css
@@ -613,7 +613,7 @@ export const fcl = fixed('cl');
  * }
  * ```
  */
-export const fcc = fixed('cc');
+export const fcc: string = fixed('cc')
 
 /**
  * ```css
@@ -627,7 +627,7 @@ export const fcc = fixed('cc');
  * }
  * ```
  */
-export const fcr = fixed('cr');
+export const fcr: string = fixed('cr')
 
 /**
  * ```css
@@ -641,7 +641,7 @@ export const fcr = fixed('cr');
  * }
  * ```
  */
-export const fbl = fixed('bl');
+export const fbl: string = fixed('bl')
 
 /**
  * ```css
@@ -655,7 +655,7 @@ export const fbl = fixed('bl');
  * }
  * ```
  */
-export const fbc = fixed('bc');
+export const fbc: string = fixed('bc')
 
 /**
  * ```css
@@ -669,4 +669,4 @@ export const fbc = fixed('bc');
  * }
  * ```
  */
-export const fbr = fixed('br');
+export const fbr: string = fixed('br')
