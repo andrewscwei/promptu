@@ -1,5 +1,9 @@
 {
-  "root": true,
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true
+  },
   "extends": [
     "plugin:@typescript-eslint/recommended"
   ],
@@ -7,10 +11,7 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "env": {
-    "es6": true,
-    "node": true
-  },
+  "root": true,
   "rules": {
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
@@ -44,7 +45,7 @@
         }
       }
     ],
-    "@typescript-eslint/consistent-type-assertions": "off",
+    "@typescript-eslint/consistent-type-assertions": "error",
     "@typescript-eslint/dot-notation": "off",
     "@typescript-eslint/explicit-member-accessibility": [
       "error",
@@ -211,7 +212,12 @@
     "no-debugger": "error",
     "no-duplicate-case": "error",
     "no-duplicate-imports": "error",
-    "no-empty": "off",
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
     "no-eval": "error",
     "no-extra-bind": "error",
     "no-fallthrough": "off",
@@ -286,6 +292,7 @@
       "error",
       "never"
     ],
+    "space-unary-ops": "error",
     "spaced-comment": [
       "error",
       "always",
@@ -295,7 +302,6 @@
         ]
       }
     ],
-    "space-unary-ops": "error",
     "quote-props": [
       "error",
       "consistent"

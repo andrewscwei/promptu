@@ -72,7 +72,7 @@ export function verticalMargin(value: string): string {
  * }
  * ```
  */
-export function horizontalPadding(value: string) : string{
+export function horizontalPadding(value: string) : string {
   return minify(`
     padding-left: ${value};
     padding-right: ${value};
