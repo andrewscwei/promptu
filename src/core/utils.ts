@@ -2,7 +2,7 @@
  * Converts a hex number/stringvalue representing a color to a RGB tuple.
  *
  * @param val - Hex number/string value representing a color.
- * @param prefix - Output string prefix.
+ * @param prefix - Hex string prefix.
  *
  * @return RGB tuple.
  *
@@ -22,22 +22,42 @@ export function toRGBTuple(val: string | number, prefix = '#'): [number, number,
 }
 
 /**
- * Converts a hex number/stringvalue representing a color to a RGB string.
+ * Converts a hex number/string value representing a color to a RGB string.
  *
  * @param val - Hex number/string value representing a color.
- * @param prefix - Output string prefix.
+ * @param prefix - Hex string prefix.
  *
  * @return RGB string.
  *
  * @example
  * ```js
- * toRGBString('#fff') // Returns '255,255,255'
- * toRGBString('0x000', '0x') // Returns '0,0,0'
+ * toRGBString('#fff') // Returns 'rgb(255,255,255)'
+ * toRGBString('0x000', '0x') // Returns 'rgb(0,0,0)'
  * ```
  */
 export function toRGBString(val: string | number, prefix = '#'): string {
   const t = toRGBTuple(val, prefix)
-  return t.join(',')
+  return `rgb(${t.join(',')})`
+}
+
+/**
+ * Converts a hex number/string value representing a color and an alpha value to a RGBA string.
+ *
+ * @param val - Hex number/string value representing a color.
+ * @param alpha - The alpha level, between 0.0 - 1.0, inclusive.
+ * @param prefix - Hex string prefix.
+ *
+ * @return RGBA string.
+ *
+ * @example
+ * ```js
+ * toRGBString('#fff', 0.5) // Returns 'rgba(255,255,255,0.5)'
+ * toRGBString('0x000', 1, '0x') // Returns 'rgba(0,0,0,1)'
+ * ```
+ */
+export function toRGBAString(val: string | number, alpha: number, prefix = '#'): string {
+  const t = toRGBTuple(val, prefix)
+  return `rgba(${t.join(',')},${alpha})`
 }
 
 /**
