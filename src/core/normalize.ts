@@ -61,21 +61,21 @@ export default function(): string {
     thead,
     tfoot,
     col {
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      font-weight: normal;
-      line-height: normal;
-      text-decoration: none;
-      text-rendering: optimizeLegibility;
-      text-size-adjust: 100%;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
+      border: none;
+      box-sizing: border-box;
       display: block;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
     }
 
     button,
@@ -83,14 +83,19 @@ export default function(): string {
     optgroup,
     select,
     textarea {
+      border-radius: 0;
       border: none;
       box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
       color: inherit;
       font: inherit;
+      margin: 0;
+      outline: none;
       overflow: auto;
+      padding: 0;
+    }
+
+    option {
+      color: #000;
     }
 
     input[type='submit'],
@@ -101,26 +106,21 @@ export default function(): string {
     input[type='file'],
     select,
     button {
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      font-weight: normal;
-      line-height: normal;
-      text-decoration: none;
-      text-rendering: optimizeLegibility;
-      text-size-adjust: 100%;
       -moz-osx-font-smoothing: grayscale;
+      -webkit-appearance: button;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
       cursor: pointer;
       display: inline-block;
-      position: relative;
+      font-weight: normal;
+      line-height: normal;
       overflow: visible;
+      position: relative;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
       text-transform: none;
-      -webkit-appearance: button;
     }
 
     input[type='submit']::-moz-focus-inner,
@@ -156,24 +156,24 @@ export default function(): string {
     }
 
     a[type='button'] {
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      font-weight: normal;
-      line-height: normal;
-      text-decoration: none;
-      text-rendering: optimizeLegibility;
-      text-size-adjust: 100%;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
+      border: none;
+      box-sizing: border-box;
       cursor: pointer;
       display: inline-block;
-      position: relative;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0;
+      outline: none;
       overflow: visible;
+      padding: 0;
+      position: relative;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
       text-transform: none;
     }
 
@@ -207,40 +207,40 @@ export default function(): string {
     a[type='label'],
     li[type='label'],
     span[type='label'] {
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      font-weight: normal;
-      line-height: normal;
-      max-width: 100%;
-      text-decoration: none;
-      text-rendering: optimizeLegibility;
-      text-size-adjust: 100%;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
+      border: none;
+      box-sizing: border-box;
+      font-weight: normal;
+      line-height: normal;
       list-style: none;
+      margin: 0;
+      max-width: 100%;
+      outline: none;
+      padding: 0;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
     }
 
     ul,
     ol {
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      font-weight: normal;
-      line-height: normal;
-      text-decoration: none;
-      text-rendering: optimizeLegibility;
-      text-size-adjust: 100%;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
+      border: none;
+      box-sizing: border-box;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
     }
 
     input[type='text'],
@@ -408,26 +408,26 @@ export default function(): string {
     }
 
     form {
-      border: none;
-      box-sizing: border-box;
-      margin: 0;
-      outline: none;
-      padding: 0;
-      font-weight: normal;
-      line-height: normal;
-      text-decoration: none;
-      text-rendering: optimizeLegibility;
-      text-size-adjust: 100%;
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
+      border: none;
+      box-sizing: border-box;
+      font-weight: normal;
+      line-height: normal;
+      margin: 0;
+      outline: none;
+      padding: 0;
       position: static;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      text-size-adjust: 100%;
     }
 
     a {
-      text-decoration: none;
       background-color: transparent;
+      text-decoration: none;
     }
 
     a:active,
