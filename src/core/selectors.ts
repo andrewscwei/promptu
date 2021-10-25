@@ -1,6 +1,5 @@
 /**
- * Selects the element on hover when the HTML tag doesn't have the `touch`
- * class.
+ * Selects the element on hover when the HTML tag doesn't have the `touch` class.
  *
  * ```css
  * html:not(.touch) &:hover
@@ -9,8 +8,7 @@
 export const hoverWithoutTouch = 'html:not(.touch) &:hover'
 
 /**
- * Selects the element on hover when the HTML tag doesn't have the `touch`
- * class.
+ * Selects the element on hover when the HTML tag doesn't have the `touch` class.
  *
  * ```css
  * html:not(.touch) &:hover

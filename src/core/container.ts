@@ -66,12 +66,10 @@ export const cover: string = minify(`
 `)
 
 /**
- * Transforms an element to a flex box where the child elements are
- * horizontally aligned.
+ * Transforms an element to a flex box where the child elements are horizontally aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead
- *                   of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
  *
  * @returns CSS string.
  *
@@ -202,12 +200,10 @@ export function flexh(alignment: Alignment = 'cc', isInline = false): string {
 }
 
 /**
- * Transforms an element to a flex box where the child elements are reverse
- * horizontally aligned.
+ * Transforms an element to a flex box where the child elements are reverse horizontally aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead
- *                   of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
  *
  * @returns CSS string.
  *
@@ -338,12 +334,10 @@ export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
 }
 
 /**
- * Transforms an element to a flex box where the child elements are vertically
- * aligned.
+ * Transforms an element to a flex box where the child elements are vertically aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead
- *                   of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
  *
  * @returns CSS string.
  *
@@ -474,12 +468,10 @@ export function flexv(alignment: Alignment = 'cc', isInline = false): string {
 }
 
 /**
- * Transforms an element to a flex box where the child elements are vertically
- * aligned.
+ * Transforms an element to a flex box where the child elements are vertically aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead
- *                   of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
  *
  * @returns CSS string.
  *

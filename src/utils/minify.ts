@@ -1,7 +1,9 @@
 /**
- * Shallow minification of CSS string.
+ * Shallow minification of a CSS string.
  *
  * @param val - CSS string.
+ *
+ * @returns The minified CSS string.
  *
  * @private
  */

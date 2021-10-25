@@ -1,6 +1,6 @@
 # Promptu [![npm](https://img.shields.io/npm/v/promptu.svg)](https://www.npmjs.com/package/promptu) [![CI](https://github.com/andrewscwei/promptu/workflows/CI/badge.svg)](https://github.com/andrewscwei/promptu/actions?query=workflow%3ACI) [![CD](https://github.com/andrewscwei/promptu/workflows/CD/badge.svg)](https://github.com/andrewscwei/promptu/actions?query=workflow%3ACD)
 
-Micro CSS-in-JS library. For documentation please visit [here](https://andrewscwei.github.io/promptu/).
+A micro CSS-in-JS library that provides shorthands for commonly-used CSS rules as well as utility functions for transforming and parsing between CSS-compatible data types. For documentation please visit [here](https://andrewscwei.github.io/promptu/).
 
 ## Setup
 
@@ -19,7 +19,7 @@ $ npm run build
 Promptu pairs well with [Styled Components](https://styled-components.com/) (or any other CSS-in-JS library). Example use:
 
 ```ts
-import * as promptu from 'promptu'
+import { align, container } from 'promptu'
 
 const StyledRoot = styled.div`
   ${promptu.align.ftl} // Aligns to top left in fixed position
@@ -41,7 +41,3 @@ A raw CSS file for just normalizing rules is generated and packaged into the rel
   </body>
 </html>
 ```
-
-## Disclaimer
-
-Promptu is an on-going pet project for experimenting with CSS-in-JS styling techniques. At its current state, it is not production-ready, has an ever-changing API, and lacks proper documentation. Its features are driven by internal requirements and is meant for internal use only.

@@ -9,7 +9,7 @@ import { toCSSProperty } from './utils'
  * @param timingFunction - Value for `transition-timing-function`.
  * @param delay - Value for `transition-delay`.
  *
- * @return CSS string.
+ * @returns CSS string.
  */
 export function transition(property: string | string[], duration: number | string | (number | string)[], timingFunction: string | string[] = 'linear', delay: number | string | (number | string)[] = 0): string {
   return minify(`

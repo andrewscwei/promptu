@@ -1,4 +1,4 @@
-import { FontDisplay, FontStyle, FontVariant, FontWeight, LetterSpacing, LineHeight } from '../types'
+import { FontDisplay, FontStyle, FontVariant, FontFormat, FontWeight, LetterSpacing, LineHeight } from '../types'
 import minify from '../utils/minify'
 
 /**
@@ -31,14 +31,14 @@ export const fontWeights: { [key: string]: FontWeight } = {
 }
 
 /**
- * Infers the font format from a font file extension. Supported extensions
- * include: `eot`, `woff2`, `woff`, `ttf`, `otf`, `svg`.
+ * Infers the font format from a font file extension. Supported extensions include: `eot`, `woff2`,
+ * `woff`, `ttf`, `otf`, `svg`.
  *
  * @param path - The path of the font file.
  *
- * @return The font format. Defaults to `opentype` if unable to infer.
+ * @returns The font format. Defaults to `opentype` if unable to infer.
  */
-export function getFontFormatFromPath(path: string): string {
+export function getFontFormatFromPath(path: string): FontFormat {
   const ext = path.split('.').pop()
 
   if (!ext) return 'opentype'
@@ -70,10 +70,9 @@ export function getFontFormatFromPath(path: string): string {
  *
  * @param path - Path of the font file.
  *
- * @return The font style of the font file. Defaults to `normal` if unable to
- *         infer.
+ * @returns The font style of the font file. Defaults to `normal` if unable to infer.
  */
-export function getFontStyleFromPath(path: string): string {
+export function getFontStyleFromPath(path: string): FontStyle {
   const basename = path.split('/').pop()
 
   if (!basename) return 'normal'
@@ -94,7 +93,7 @@ export function getFontStyleFromPath(path: string): string {
  *
  * @param path - Path of the font file.
  *
- * @return The font weight of the font file. Defaults to normal (400).
+ * @returns The font weight of the font file. Defaults to normal (400).
  */
 export function getFontWeightFromPath(path: string): FontWeight {
   const basename = path.split('/').pop()
@@ -134,18 +133,17 @@ export function getFontWeightFromPath(path: string): FontWeight {
 }
 
 /**
- * CSS mixin for defining `@font-face` rules.
+ * CSS mixin for defining a `@font-face` rule.
  *
  * @param family - Font family.
- * @param src - File path.
+ * @param src - File path, the format is automatically inferred.
  * @param weight - Font weight, automatically inferred if unspecified.
  * @param style - Font style, automatically inferred if unspecified.
  * @param display - Font display, automatically inferred if unspecified.
  *
- * @return Generated CSS rules.
+ * @returns Generated CSS rules.
  *
  * @example
- *
  * ```js
  * fontFace('Roboto', require('fonts/Roboto.ttf')) // Returns...
  * ```
@@ -173,20 +171,19 @@ export function fontFace(family: string, src: string, weight?: FontWeight, style
 }
 
 /**
- * CSS mixin for defining font style related rules.
+ * CSS mixin for defining a set of font style related rules. All numbers default to `rem` unit.
  *
  * @param family - Font family.
- * @param size - Font size. If the value specified is a number, the associated
- *               unit will be 'rem'.
+ * @param size - Font size. If the value specified is a number, the associated unit will be 'rem'.
  * @param weight - Font weight.
  * @param style - Font style.
- * @param lineHeight - Line height. If the value specified is a number, the
- *                     associated unit will be 'rem'.
- * @param letterSpacing - Letter spacing. If the value specified is a number,
- *                        the associated unit will be 'rem'.
+ * @param lineHeight - Line height. If the value specified is a number, the associated unit will be
+ *                     'rem'.
+ * @param letterSpacing - Letter spacing. If the value specified is a number, the associated unit
+ *                        will be 'rem'.
  * @param variant - Font variant.
  *
- * @return Generated CSS rules.
+ * @returns Generated CSS rules.
  *
  * @example
  * ```js

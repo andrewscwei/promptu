@@ -1,10 +1,12 @@
+import { HexStringPrefix, RGBATuple, RGBTuple, UnitTuple } from '../types'
+
 /**
- * Converts a hex number/stringvalue representing a color to a RGB tuple.
+ * Converts a hex number/string representing a color to an RGB tuple.
  *
- * @param val - Hex number/string value representing a color.
- * @param prefix - Hex string prefix.
+ * @param val - Hex number/string representing a color.
+ * @param prefix - Prefix of hex if using a string.
  *
- * @return RGB tuple.
+ * @returns RGB tuple in the format of `[r, g, b]`.
  *
  * @example
  * ```js
@@ -12,7 +14,7 @@
  * toRGBTuple('0x000', '0x') // Returns '[0, 0, 0]'
  * ```
  */
-export function toRGBTuple(val: string | number, prefix = '#'): [number, number, number] {
+export function toRGBTuple(val: string | number, prefix: HexStringPrefix = '#'): RGBTuple {
   const t = typeof val === 'string' ? toHexNumber(val, prefix) : val
   const r = (t & 0xFF0000) >> 16
   const g = (t & 0xFF00) >> 8
@@ -22,12 +24,12 @@ export function toRGBTuple(val: string | number, prefix = '#'): [number, number,
 }
 
 /**
- * Converts a hex number/string value representing a color to a RGB string.
+ * Converts a hex number/string representing a color to an RGB string.
  *
- * @param val - Hex number/string value representing a color.
- * @param prefix - Hex string prefix.
+ * @param val - Hex number/string representing a color.
+ * @param prefix - Prefix of hex if using a string.
  *
- * @return RGB string.
+ * @returns RGB string.
  *
  * @example
  * ```js
@@ -35,29 +37,49 @@ export function toRGBTuple(val: string | number, prefix = '#'): [number, number,
  * toRGBString('0x000', '0x') // Returns 'rgb(0,0,0)'
  * ```
  */
-export function toRGBString(val: string | number, prefix = '#'): string {
-  const t = toRGBTuple(val, prefix)
-  return `rgb(${t.join(',')})`
+export function toRGBString(val: string | number, prefix: HexStringPrefix = '#'): string {
+  const [r, g, b] = toRGBTuple(val, prefix)
+  return `rgb(${r},${g},${b})`
 }
 
 /**
- * Converts a hex number/string value representing a color and an alpha value to a RGBA string.
+ * Converts a hex number/string representing a color and an alpha value to an RGBA tuple.
  *
- * @param val - Hex number/string value representing a color.
+ * @param val - Hex number/string representing a color.
  * @param alpha - The alpha level, between 0.0 - 1.0, inclusive.
- * @param prefix - Hex string prefix.
+ * @param prefix - Prefix of hex if using a string.
  *
- * @return RGBA string.
+ * @returns RGBA tuple in the format of `[r, g, b, a]`.
  *
  * @example
  * ```js
- * toRGBString('#fff', 0.5) // Returns 'rgba(255,255,255,0.5)'
- * toRGBString('0x000', 1, '0x') // Returns 'rgba(0,0,0,1)'
+ * toRGBATuple('#fff', 0.5) // Returns '[255,255,255,0.5]'
+ * toRGBATuple('0x000', 1, '0x') // Returns '[0,0,0,1]'
  * ```
  */
-export function toRGBAString(val: string | number, alpha: number, prefix = '#'): string {
-  const t = toRGBTuple(val, prefix)
-  return `rgba(${t.join(',')},${alpha})`
+export function toRGBATuple(val: string | number, alpha: number, prefix: HexStringPrefix = '#'): RGBATuple {
+  const [r, g, b] = toRGBTuple(val, prefix)
+  return [r, g, b, alpha]
+}
+
+/**
+ * Converts a hex number/string representing a color and an alpha value to an RGBA string.
+ *
+ * @param val - Hex number/string representing a color.
+ * @param alpha - The alpha level, between 0.0 - 1.0, inclusive.
+ * @param prefix - Prefix of hex if using a string.
+ *
+ * @returns RGBA string.
+ *
+ * @example
+ * ```js
+ * toRGBAString('#fff', 0.5) // Returns 'rgba(255,255,255,0.5)'
+ * toRGBAString('0x000', 1, '0x') // Returns 'rgba(0,0,0,1)'
+ * ```
+ */
+export function toRGBAString(val: string | number, alpha: number, prefix: HexStringPrefix = '#'): string {
+  const [r, g, b, a] = toRGBATuple(val, alpha, prefix)
+  return `rgba(${r},${g},${b},${a})`
 }
 
 /**
@@ -66,7 +88,7 @@ export function toRGBAString(val: string | number, alpha: number, prefix = '#'):
  * @param val - Hex number value.
  * @param prefix - Output string prefix.
  *
- * @return Converted hex string.
+ * @returns Converted hex string.
  *
  * @example
  * ```js
@@ -74,7 +96,7 @@ export function toRGBAString(val: string | number, alpha: number, prefix = '#'):
  * toHexString(0, '0x') // Returns '#000000'
  * ```
  */
-export function toHexString(val: number, prefix = '#'): string {
+export function toHexString(val: number, prefix: HexStringPrefix = '#'): string {
   return shortToLongHex(`${prefix}${val.toString(16)}`)
 }
 
@@ -84,7 +106,7 @@ export function toHexString(val: number, prefix = '#'): string {
  * @param val - Hex string.
  * @param prefix - Prefix to look out for.
  *
- * @return Hex number.
+ * @returns Hex number.
  *
  * @example
  * ```js
@@ -93,7 +115,7 @@ export function toHexString(val: number, prefix = '#'): string {
  * toHexNumber('0xfff', '0x') // Returns 16777215
  * ```
  */
-export function toHexNumber(val: string, prefix = '#'): number {
+export function toHexNumber(val: string, prefix: HexStringPrefix = '#'): number {
   const t1 = isShortHex(val, prefix) ? shortToLongHex(val, prefix) : val
   const t2 = t1.startsWith(prefix) ? t1.substring(prefix.length) : t1
   return parseInt(t2, 16)
@@ -103,9 +125,9 @@ export function toHexNumber(val: string, prefix = '#'): number {
  * Determines if a hex string is in CSS shorthand notation.
  *
  * @param val - The hex string to test against.
- * @param prefix - Prefix to look out for.
+ * @param prefix - Prefix of hex string.
  *
- * @return `true` if the hex string is in shorthand notation, `false` otherwise.
+ * @returns `true` if the hex string is in shorthand notation, `false` otherwise.
  *
  * @example
  * ```js
@@ -115,7 +137,7 @@ export function toHexNumber(val: string, prefix = '#'): number {
  * isShortHex('#000', '0x') // Returns `false`
  * ```
  */
-export function isShortHex(val: string, prefix = '#'): boolean {
+export function isShortHex(val: string, prefix: HexStringPrefix = '#'): boolean {
   if (!val.startsWith(prefix)) return false
 
   const t = val.substring(prefix.length)
@@ -125,12 +147,12 @@ export function isShortHex(val: string, prefix = '#'): boolean {
 }
 
 /**
- * Converts a shorthand hex value to a longhand hex value.
+ * Converts a shorthand hex string to a longhand hex string.
  *
- * @param val - Shorthand hex value.
- * @param prefix - Prefix to look out for.
+ * @param val - Shorthand hex string.
+ * @param prefix - Prefix of hex string.
  *
- * @return Longhand hex value.
+ * @returns Longhand hex string.
  *
  * @example
  * ```js
@@ -138,7 +160,7 @@ export function isShortHex(val: string, prefix = '#'): boolean {
  * shortToLongHex('0x000', '0x') // Returns '0x000000'
  * ```
  */
-export function shortToLongHex(val: string, prefix = '#'): string {
+export function shortToLongHex(val: string, prefix: HexStringPrefix = '#'): string {
   const t = val.startsWith(prefix) ? val.substring(prefix.length) : val
 
   if (isShortHex(val, prefix)) {
@@ -150,14 +172,13 @@ export function shortToLongHex(val: string, prefix = '#'): string {
 }
 
 /**
- * Parses a number or string representing a number with unit and returns a
- * tuple with the number value and string unit. If a number is provided, the
- * default unit is `px`.
+ * Parses a number or string representing a number with units. The result is a tuple type with the
+ * number and unit separated. If the `value` provided is a number, the default unit is `px`.
  *
  * @param value - String or number to parse.
  * @param defaultUnit - Default unit if the unit is absent.
  *
- * @return Parsed value-unit tuple.
+ * @returns Parsed number/unit tuple.
  *
  * @example
  * ```js
@@ -165,21 +186,21 @@ export function shortToLongHex(val: string, prefix = '#'): string {
  * parseUnit('1em', 'em') // Returns [1, 'em']
  * ```
  */
-export function parseUnit(val: string | number, defaultUnit = 'px'): [number, string] {
+export function parseUnit(val: string | number, defaultUnit = 'px'): UnitTuple {
   const str = String(val)
 
   return [parseFloat(str), str.match(/[\d.\-+]*\s*(.*)/)?.[1] ?? defaultUnit]
 }
 
 /**
- * Converts a value to a valid CSS property.
+ * Converts any string, number, or array of either type to a valid CSS property.
  *
- * @param value - The value to convert. If it is a number, it will be suffixed
- *                with the provided unit. If it is an array, the output CSS
- *                property will be a comma delimited string of all the values.
- * @param unit - The unit to append to the number value(s).
+ * @param value - The value to convert. If it is a number, it will be suffixed with the provided
+ *                unit. If it is an array, the returned CSS property will be a comma delimited
+ *                string of all the values.
+ * @param unit - The unit to append to number values.
  *
- * @return CSS string.
+ * @returns A valid CSS property.
  *
  * @throws Invalid value provided.
  */
