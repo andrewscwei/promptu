@@ -22,8 +22,8 @@ Promptu pairs well with [Styled Components](https://styled-components.com/) (or 
 import { align, container } from 'promptu'
 
 const StyledRoot = styled.div`
-  ${promptu.align.ftl} // Aligns to top left in fixed position
-  ${promptu.container.fvtl} // Transforms this div into a flex box where children are vertically top left aligned
+  ${align.ftl} // Aligns to top left in fixed position
+  ${container.fvtl} // Transforms this div into a flex box where children are vertically top left aligned
 `
 ```
 
