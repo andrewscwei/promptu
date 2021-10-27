@@ -8,26 +8,18 @@ import minify from '../utils/minify'
 export default function(): string {
   return minify(`
     html {
-      border: none;
-      box-sizing: border-box;
       font-family: sans-serif;
       font-size: 10px;
       height: 100%;
       margin: 0;
-      outline: none;
       padding: 0;
       width: 100%;
     }
 
     body {
-      border: none;
-      box-sizing: border-box;
       font-size: 1.6rem;
       height: 100%;
       margin: 0;
-      outline: none;
-      overflow-x: hidden;
-      overflow-y: auto;
       padding: 0;
       width: 100%;
     }
