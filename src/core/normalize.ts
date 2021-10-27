@@ -32,14 +32,6 @@ export default function(): string {
       width: 100%;
     }
 
-    #app {
-      box-sizing: border-box;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-    }
-
     article,
     aside,
     details,
