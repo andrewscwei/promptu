@@ -48,8 +48,8 @@ export function horizontalMargin(value: string): string {
  */
 export function verticalMargin(value: string): string {
   return minify(`
-    margin-left: ${value};
-    margin-right: ${value};
+    margin-top: ${value};
+    margin-bottom: ${value};
   `)
 }
 
