@@ -8,7 +8,6 @@ const config: Configuration = {
   entry: {
     index: path.join(cwd, 'src/index.ts'),
   },
-  externals: [require('webpack-node-externals')()],
   mode: 'production',
   module: {
     rules: [{

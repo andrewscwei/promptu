@@ -1,6 +1,6 @@
 import csstree from 'css-tree'
 import { describe, it } from 'mocha'
-import { images } from '../src'
+import { images } from '..'
 
 describe('images', () => {
   for (const k in images) {

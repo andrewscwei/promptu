@@ -1,6 +1,6 @@
 import csstree from 'css-tree'
 import { describe, it } from 'mocha'
-import { align } from '../src'
+import { align } from '..'
 
 describe('align', () => {
   for (const k in align) {

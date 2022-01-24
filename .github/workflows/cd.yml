@@ -1,47 +1,30 @@
 name: CD
 on:
   push:
-    tags:
-      - v[0-9]+.[0-9]+.[0-9]+
+    tags: ['v*']
   release:
     types: [published]
-
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     container: node:16.3.0
-    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Cache Node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-modules-
+          key: ${{ runner.os }}-build-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-npm-cache-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install Node modules
         run: npm install
       - name: Build
-        run: BUILD_NUMBER=$GITHUB_SHA npm run build
-      - name: Pack
-        run: .github/workflows/pack.sh
-      - name: Persist package
-        uses: actions/upload-artifact@v1
-        with:
-          name: package
-          path: package/
-      - name: Persist build dir
-        uses: actions/upload-artifact@v1
-        with:
-          name: build
-          path: build/
-      - name: Persist lib dir
-        uses: actions/upload-artifact@v1
-        with:
-          name: lib
-          path: lib/
+        run: npm run build
       - name: Test
         run: npm test
       - name: Deploy to NPM

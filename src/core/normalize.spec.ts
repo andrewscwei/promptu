@@ -1,6 +1,6 @@
 import csstree from 'css-tree'
 import { describe, it } from 'mocha'
-import { normalize } from '../src'
+import { normalize } from '..'
 
 describe('normalize', () => {
   it('has valid syntax', () => {
