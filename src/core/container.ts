@@ -2392,3 +2392,29 @@ export const ifrvsr: string = flexrv('sr', true)
  * ```
  */
 export const ifrvss: string = flexrv('ss', true)
+
+/**
+ * ```css
+ * {
+ *   -webkit-overflow-scrolling: touch;
+ *   overflow-x: scroll;
+ * }
+ * ```
+ */
+export const hscroll: string = minify(`
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+`)
+
+/**
+ * ```css
+ * {
+ *   -webkit-overflow-scrolling: touch;
+ *   overflow-y: scroll;
+ * }
+ * ```
+ */
+export const vscroll: string = minify(`
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+`)
