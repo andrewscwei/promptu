@@ -1,14 +1,14 @@
 name: CD
 on:
   push:
-    tags: ['v*']
+    tags: ["v*"]
   release:
     types: [published]
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    container: node:16.3.0
+    container: node:17.5.0
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -27,6 +27,16 @@ jobs:
         run: npm run build
       - name: Test
         run: npm test
+      - name: Create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body_path: RELEASE.md
+          draft: false
+          prerelease: false
       - name: Deploy to NPM
         run: .github/workflows/deploy_to_npm.sh
         env:

@@ -1,6 +1,6 @@
 {
   "name": "promptu",
-  "version": "5.5.0",
+  "version": "5.6.0",
   "description": "Micro CSS-in-JS library",
   "main": "build/index.js",
   "scripts": {
@@ -33,20 +33,20 @@
   "devDependencies": {
     "@types/css-tree": "^1.0.7",
     "@types/mocha": "^9.1.0",
-    "@types/node": "^17.0.10",
+    "@types/node": "^17.0.19",
     "@types/webpack": "^5.28.0",
     "@types/webpack-env": "^1.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "css-tree": "^2.0.4",
-    "eslint": "^8.7.0",
-    "mocha": "^9.1.4",
+    "eslint": "^8.9.0",
+    "mocha": "^9.2.1",
     "rimraf": "^3.0.2",
     "ts-loader": "^9.2.6",
-    "ts-node": "^10.4.0",
-    "typedoc": "^0.22.11",
+    "ts-node": "^10.5.0",
+    "typedoc": "^0.22.12",
     "typescript": "^4.5.5",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.1"
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
   }
 }
