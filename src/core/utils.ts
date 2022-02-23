@@ -188,8 +188,9 @@ export function shortToLongHex(val: string, prefix: HexStringPrefix = '#'): stri
  */
 export function parseUnit(val: string | number, defaultUnit = 'px'): UnitTuple {
   const str = String(val)
+  const parsedUnit = str.match(/[\d.\-+]*\s*(.*)/)?.[1]
 
-  return [parseFloat(str), str.match(/[\d.\-+]*\s*(.*)/)?.[1] ?? defaultUnit]
+  return [parseFloat(str), !parsedUnit || parsedUnit === '' ? defaultUnit : parsedUnit]
 }
 
 /**
