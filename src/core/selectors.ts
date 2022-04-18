@@ -96,17 +96,66 @@ export const ol3 = 'ul ul ol, ul ol ol, ol ul ol, ol ol ol'
 
 /**
  * ```css
- * p + ul, p + ol
+ * p + ul, p + ol, ul + ul, ul + ol, ol + ul, ol + ol
  * ```
  */
-export const p2l = 'p + ul, p + ol, ul + ul, ul + ol, ol + ul, ol + ol'
+export const p2l = 'p + ul, p + ol'
 
 /**
  * ```css
- * p + p, ul + p, ol + p
+ * p + p
  * ```
  */
-export const p2p = 'p + p, ul + p, ol + p'
+export const p2p = 'p + p'
+
+/**
+ * ```css
+ * p + li
+ * ```
+ */
+export const p2li = 'p + li'
+
+/**
+ * ```css
+ * li + ul, li + ol
+ * ```
+ */
+export const li2l = 'li + ul, li + ol'
+
+/**
+ * ```css
+ * li + p
+ * ```
+ */
+export const li2p = 'li + p'
+
+/**
+ * ```css
+ * li + li
+ * ```
+ */
+export const li2li = 'li + li'
+
+/**
+ * ```css
+ * ul + ul, ul + ol, ol + ul, ol + ol
+ * ```
+ */
+export const l2l = 'ul + ul, ul + ol, ol + ul, ol + ol'
+
+/**
+ * ```css
+ * ul + p, ol + p
+ * ```
+ */
+export const l2p = 'ul + p, ol + p'
+
+/**
+ * ```css
+ * ul + p, ol + p
+ * ```
+ */
+export const l2li = 'ul + li, ol + li'
 
 /**
  * ```css
