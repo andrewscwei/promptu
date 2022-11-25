@@ -1,3 +1,5 @@
+/* eslint-disable no-prototype-builtins */
+
 import csstree from 'css-tree'
 import { describe, it } from 'mocha'
 import { container } from '..'

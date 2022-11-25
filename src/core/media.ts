@@ -116,18 +116,20 @@ export const ar = (aspectRatio: string | number): string => `(aspect-ratio: ${as
  */
 export function gtw(width: string | number): string {
   const [val, unit] = parseUnit(width)
+
   return `(min-width: ${val + 1}${unit})`
 }
 
 /**
  * Media query greater-than-or-equal-to width breakpoint.
  *
- * @param width - Width (in pixels).
+ * @param minWidth - Width (in pixels).
  *
  * @returns `(min-width: ${width)`
  */
 export function gtew(minWidth: string | number): string {
   const [val, unit] = parseUnit(minWidth)
+
   return `(min-width: ${val}${unit})`
 }
 
@@ -140,18 +142,20 @@ export function gtew(minWidth: string | number): string {
  */
 export function ltw(width: string | number): string {
   const [val, unit] = parseUnit(width)
+
   return `(max-width: ${val - 1}${unit})`
 }
 
 /**
  * Media query less-than-or-equal-to width breakpoint.
  *
- * @param width - Width (in pixels).
+ * @param maxWidth - Width (in pixels).
  *
  * @returns `(max-width: ${width)`
  */
 export function ltew(maxWidth: string | number): string {
   const [val, unit] = parseUnit(maxWidth)
+
   return `(max-width: ${val}${unit})`
 }
 
@@ -166,6 +170,7 @@ export function ltew(maxWidth: string | number): string {
 export function cw(minWidth: string | number, maxWidth: string | number): string {
   const [minVal, minUnit] = parseUnit(minWidth)
   const [maxVal, maxUnit] = parseUnit(maxWidth)
+
   return `(min-width: ${minVal}${minUnit}) and (max-width: ${maxVal}${maxUnit})`
 }
 
@@ -178,6 +183,7 @@ export function cw(minWidth: string | number, maxWidth: string | number): string
  */
 export function gth(height: string | number): string {
   const [val, unit] = parseUnit(height)
+
   return `(min-height: ${val + 1}${unit})`
 }
 
@@ -190,6 +196,7 @@ export function gth(height: string | number): string {
  */
 export function gteh(height: string | number): string {
   const [val, unit] = parseUnit(height)
+
   return `(min-height: ${val}${unit})`
 }
 
@@ -202,6 +209,7 @@ export function gteh(height: string | number): string {
  */
 export function lth(height: string | number): string {
   const [val, unit] = parseUnit(height)
+
   return `(max-height: ${val - 1}${unit})`
 }
 
@@ -214,6 +222,7 @@ export function lth(height: string | number): string {
  */
 export function lteh(height: string | number): string {
   const [val, unit] = parseUnit(height)
+
   return `(max-height: ${val}${unit})`
 }
 
@@ -228,6 +237,7 @@ export function lteh(height: string | number): string {
 export function ch(minHeight: string | number, maxHeight: string | number): string {
   const [minVal, minUnit] = parseUnit(minHeight)
   const [maxVal, maxUnit] = parseUnit(maxHeight)
+
   return `(min-height: ${minVal}${minUnit}) and (max-height: ${maxVal}${maxUnit})`
 }
 

@@ -65,13 +65,14 @@ export type HexStringPrefix = '#' | '0x'
 export type UnitTuple = [number, string]
 
 /**
- * A type storing RGB values in a tupe-like array. The format is `[red<0-255>, green<0-255>,
- * blue<0-255>]`.
+ * A type storing RGB values in a tupe-like array. The format is `[red<0-255>,
+ * green<0-255>, blue<0-255>]`.
  */
 export type RGBTuple = [number, number, number]
 
 /**
- * A type storing RGBA values in a tupe-like array. The format is `[red<0-255>, green<0-255>,
+ * A type storing RGBA values in a tupe-like array. The format is `[red<0-255>,
+ * green<0-255>,
  * blue<0-255>, alpha<0-1>]`.
  */
 export type RGBATuple = [number, number, number, number]
@@ -92,8 +93,9 @@ export interface FontWeightDict {
 }
 
 /**
- * A dictionary defining media query breakpoints for different device types. Each device type
- * contains a `min` and `max` value which can be used to represent either width or height values.
+ * A dictionary defining media query breakpoints for different device types.
+ * Each device type contains a `min` and `max` value which can be used to
+ * represent either width or height values.
  */
 export interface MediaBreakpointDict {
   mobile: {

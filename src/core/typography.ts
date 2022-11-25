@@ -18,7 +18,7 @@ import minify from '../utils/minify'
  * }
  * ```
  */
-export const fontWeights: { [key: string]: FontWeight } = {
+export const fontWeights: Record<string, FontWeight> = {
   thin: 100,
   extraLight: 200,
   light: 300,
@@ -31,8 +31,8 @@ export const fontWeights: { [key: string]: FontWeight } = {
 }
 
 /**
- * Infers the font format from a font file extension. Supported extensions include: `eot`, `woff2`,
- * `woff`, `ttf`, `otf`, `svg`.
+ * Infers the font format from a font file extension. Supported extensions
+ * include: `eot`, `woff2`, `woff`, `ttf`, `otf`, `svg`.
  *
  * @param path - The path of the font file.
  *
@@ -70,7 +70,8 @@ export function getFontFormatFromPath(path: string): FontFormat {
  *
  * @param path - Path of the font file.
  *
- * @returns The font style of the font file. Defaults to `normal` if unable to infer.
+ * @returns The font style of the font file. Defaults to `normal` if unable to
+ *          infer.
  */
 export function getFontStyleFromPath(path: string): FontStyle {
   const basename = path.split('/').pop()
@@ -171,16 +172,18 @@ export function fontFace(family: string, src: string, weight?: FontWeight, style
 }
 
 /**
- * CSS mixin for defining a set of font style related rules. All numbers default to `rem` unit.
+ * CSS mixin for defining a set of font style related rules. All numbers default
+ * to `rem` unit.
  *
  * @param family - Font family.
- * @param size - Font size. If the value specified is a number, the associated unit will be 'rem'.
+ * @param size - Font size. If the value specified is a number, the associated
+ *               unit will be 'rem'.
  * @param weight - Font weight.
  * @param style - Font style.
- * @param lineHeight - Line height. If the value specified is a number, the associated unit will be
- *                     'rem'.
- * @param letterSpacing - Letter spacing. If the value specified is a number, the associated unit
- *                        will be 'rem'.
+ * @param lineHeight - Line height. If the value specified is a number, the
+ *                     associated unit will be 'rem'.
+ * @param letterSpacing - Letter spacing. If the value specified is a number,
+ *                        the associated unit will be 'rem'.
  * @param variant - Font variant.
  *
  * @returns Generated CSS rules.
@@ -207,7 +210,7 @@ export function font(family: string, size: string | number = '1.6rem', weight: F
     font-family: ${family || 'sans-serif'};
     font-size: ${typeof size === 'number' ? `${size}rem` : size};
     font-style: ${style};
-    font-weight: ${typeof weight === 'number' ? weight : (fontWeights[weight] || weight)};
+    font-weight: ${typeof weight === 'number' ? weight : fontWeights[weight] || weight};
     font-variant: ${variant};
     line-height: ${typeof lineHeight === 'number' ? `${lineHeight}rem` : lineHeight};
     letter-spacing: ${typeof letterSpacing === 'number' ? `${letterSpacing}rem` : letterSpacing};

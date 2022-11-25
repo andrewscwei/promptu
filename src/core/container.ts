@@ -66,10 +66,12 @@ export const cover: string = minify(`
 `)
 
 /**
- * Transforms an element to a flex box where the child elements are horizontally aligned.
+ * Transforms an element to a flex box where the child elements are horizontally
+ * aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -93,98 +95,98 @@ export function flexh(alignment: Alignment = 'cc', isInline = false): string {
   let t
 
   switch (alignment) {
-  case 'tl':
-    t = `
+    case 'tl':
+      t = `
       align-items: flex-start;
       justify-content: flex-start;
     `
-    break
-  case 'tc':
-    t = `
+      break
+    case 'tc':
+      t = `
       align-items: flex-start;
       justify-content: center;
     `
-    break
-  case 'tr':
-    t = `
+      break
+    case 'tr':
+      t = `
       align-items: flex-start;
       justify-content: flex-end;
     `
-    break
-  case 'ts':
-    t = `
+      break
+    case 'ts':
+      t = `
       align-items: flex-start;
       justify-content: space-between;
     `
-    break
-  case 'cl':
-    t = `
+      break
+    case 'cl':
+      t = `
       align-items: center;
       justify-content: flex-start;
     `
-    break
-  case 'cr':
-    t = `
+      break
+    case 'cr':
+      t = `
       align-items: center;
       justify-content: flex-end;
     `
-    break
-  case 'cs':
-    t = `
+      break
+    case 'cs':
+      t = `
       align-items: center;
       justify-content: space-between;
     `
-    break
-  case 'bl':
-    t = `
+      break
+    case 'bl':
+      t = `
       align-items: flex-end;
       justify-content: flex-start;
     `
-    break
-  case 'bc':
-    t = `
+      break
+    case 'bc':
+      t = `
       align-items: flex-end;
       justify-content: center;
     `
-    break
-  case 'br':
-    t = `
+      break
+    case 'br':
+      t = `
       align-items: flex-end;
       justify-content: flex-end;
     `
-    break
-  case 'bs':
-    t = `
+      break
+    case 'bs':
+      t = `
       align-items: flex-end;
       justify-content: space-between;
     `
-    break
-  case 'sl':
-    t = `
+      break
+    case 'sl':
+      t = `
       align-items: stretch;
       justify-content: flex-start;
     `
-    break
-  case 'sc':
-    t = `
+      break
+    case 'sc':
+      t = `
       align-items: stretch;
       justify-content: center;
     `
-    break
-  case 'sr':
-    t = `
+      break
+    case 'sr':
+      t = `
       align-items: stretch;
       justify-content: flex-end;
     `
-    break
-  case 'ss':
-    t = `
+      break
+    case 'ss':
+      t = `
       align-items: stretch;
       justify-content: space-between;
     `
-    break
-  default:
-    t = `
+      break
+    default:
+      t = `
       align-items: center;
       justify-content: center;
     `
@@ -200,10 +202,12 @@ export function flexh(alignment: Alignment = 'cc', isInline = false): string {
 }
 
 /**
- * Transforms an element to a flex box where the child elements are reverse horizontally aligned.
+ * Transforms an element to a flex box where the child elements are reverse
+ * horizontally aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -227,98 +231,98 @@ export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
   let t
 
   switch (alignment) {
-  case 'tl':
-    t = `
+    case 'tl':
+      t = `
       align-items: flex-start;
       justify-content: flex-end;
     `
-    break
-  case 'tc':
-    t = `
+      break
+    case 'tc':
+      t = `
       align-items: flex-start;
       justify-content: center;
     `
-    break
-  case 'tr':
-    t = `
+      break
+    case 'tr':
+      t = `
       align-items: flex-start;
       justify-content: flex-start;
     `
-    break
-  case 'ts':
-    t = `
+      break
+    case 'ts':
+      t = `
       align-items: flex-start;
       justify-content: space-between;
     `
-    break
-  case 'cl':
-    t = `
+      break
+    case 'cl':
+      t = `
       align-items: center;
       justify-content: flex-end;
     `
-    break
-  case 'cr':
-    t = `
+      break
+    case 'cr':
+      t = `
       align-items: center;
       justify-content: flex-start;
     `
-    break
-  case 'cs':
-    t = `
+      break
+    case 'cs':
+      t = `
       align-items: center;
       justify-content: space-between;
     `
-    break
-  case 'bl':
-    t = `
+      break
+    case 'bl':
+      t = `
       align-items: flex-end;
       justify-content: flex-end;
     `
-    break
-  case 'bc':
-    t = `
+      break
+    case 'bc':
+      t = `
       align-items: flex-end;
       justify-content: center;
     `
-    break
-  case 'br':
-    t = `
+      break
+    case 'br':
+      t = `
       align-items: flex-end;
       justify-content: flex-start;
     `
-    break
-  case 'bs':
-    t = `
+      break
+    case 'bs':
+      t = `
       align-items: flex-end;
       justify-content: space-between;
     `
-    break
-  case 'sl':
-    t = `
+      break
+    case 'sl':
+      t = `
       align-items: stretch;
       justify-content: flex-end;
     `
-    break
-  case 'sc':
-    t = `
+      break
+    case 'sc':
+      t = `
       align-items: stretch;
       justify-content: center;
     `
-    break
-  case 'sr':
-    t = `
+      break
+    case 'sr':
+      t = `
       align-items: stretch;
       justify-content: flex-start;
     `
-    break
-  case 'ss':
-    t = `
+      break
+    case 'ss':
+      t = `
       align-items: stretch;
       justify-content: space-between;
     `
-    break
-  default:
-    t = `
+      break
+    default:
+      t = `
       align-items: center;
       justify-content: center;
     `
@@ -334,10 +338,12 @@ export function flexrh(alignment: Alignment = 'cc', isInline = false): string {
 }
 
 /**
- * Transforms an element to a flex box where the child elements are vertically aligned.
+ * Transforms an element to a flex box where the child elements are vertically
+ * aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -361,98 +367,98 @@ export function flexv(alignment: Alignment = 'cc', isInline = false): string {
   let t
 
   switch (alignment) {
-  case 'tl':
-    t = `
+    case 'tl':
+      t = `
       align-items: flex-start;
       justify-content: flex-start;
     `
-    break
-  case 'tc':
-    t = `
+      break
+    case 'tc':
+      t = `
       align-items: center;
       justify-content: flex-start;
     `
-    break
-  case 'tr':
-    t = `
+      break
+    case 'tr':
+      t = `
       align-items: flex-end;
       justify-content: flex-start;
     `
-    break
-  case 'ts':
-    t = `
+      break
+    case 'ts':
+      t = `
       align-items: stretch;
       justify-content: flex-start;
     `
-    break
-  case 'cl':
-    t = `
+      break
+    case 'cl':
+      t = `
       align-items: flex-start;
       justify-content: center;
     `
-    break
-  case 'cr':
-    t = `
+      break
+    case 'cr':
+      t = `
       align-items: flex-end;
       justify-content: center;
     `
-    break
-  case 'cs':
-    t = `
+      break
+    case 'cs':
+      t = `
       align-items: stretch;
       justify-content: center;
     `
-    break
-  case 'bl':
-    t = `
+      break
+    case 'bl':
+      t = `
       align-items: flex-start;
       justify-content: flex-end;
     `
-    break
-  case 'bc':
-    t = `
+      break
+    case 'bc':
+      t = `
       align-items: center;
       justify-content: flex-end;
     `
-    break
-  case 'br':
-    t = `
+      break
+    case 'br':
+      t = `
       align-items: flex-end;
       justify-content: flex-end;
     `
-    break
-  case 'bs':
-    t = `
+      break
+    case 'bs':
+      t = `
       align-items: stretch;
       justify-content: flex-end;
     `
-    break
-  case 'sl':
-    t = `
+      break
+    case 'sl':
+      t = `
       align-items: flex-start;
       justify-content: space-between;
     `
-    break
-  case 'sc':
-    t = `
+      break
+    case 'sc':
+      t = `
       align-items: center;
       justify-content: space-between;
     `
-    break
-  case 'sr':
-    t = `
+      break
+    case 'sr':
+      t = `
       align-items: flex-end;
       justify-content: space-between;
     `
-    break
-  case 'ss':
-    t = `
+      break
+    case 'ss':
+      t = `
       align-items: stretch;
       justify-content: space-between;
     `
-    break
-  default:
-    t = `
+      break
+    default:
+      t = `
       align-items: center;
       justify-content: center;
     `
@@ -468,10 +474,12 @@ export function flexv(alignment: Alignment = 'cc', isInline = false): string {
 }
 
 /**
- * Transforms an element to a flex box where the child elements are vertically aligned.
+ * Transforms an element to a flex box where the child elements are vertically
+ * aligned.
  *
  * @param alignment - Alignment style of child elements.
- * @param isInline - Specifies if the element is inline (`inline-flex` instead of `flex`).
+ * @param isInline - Specifies if the element is inline (`inline-flex` instead
+ *                   of `flex`).
  *
  * @returns CSS string.
  *
@@ -495,98 +503,98 @@ export function flexrv(alignment: Alignment = 'cc', isInline = false): string {
   let t
 
   switch (alignment) {
-  case 'tl':
-    t = `
+    case 'tl':
+      t = `
       align-items: flex-start;
       justify-content: flex-end;
     `
-    break
-  case 'tc':
-    t = `
+      break
+    case 'tc':
+      t = `
       align-items: center;
       justify-content: flex-end;
     `
-    break
-  case 'tr':
-    t = `
+      break
+    case 'tr':
+      t = `
       align-items: flex-end;
       justify-content: flex-end;
     `
-    break
-  case 'ts':
-    t = `
+      break
+    case 'ts':
+      t = `
       align-items: stretch;
       justify-content: flex-end;
     `
-    break
-  case 'cl':
-    t = `
+      break
+    case 'cl':
+      t = `
       align-items: flex-start;
       justify-content: center;
     `
-    break
-  case 'cr':
-    t = `
+      break
+    case 'cr':
+      t = `
       align-items: flex-end;
       justify-content: center;
     `
-    break
-  case 'cs':
-    t = `
+      break
+    case 'cs':
+      t = `
       align-items: stretch;
       justify-content: center;
     `
-    break
-  case 'bl':
-    t = `
+      break
+    case 'bl':
+      t = `
       align-items: flex-start;
       justify-content: flex-start;
     `
-    break
-  case 'bc':
-    t = `
+      break
+    case 'bc':
+      t = `
       align-items: center;
       justify-content: flex-start;
     `
-    break
-  case 'br':
-    t = `
+      break
+    case 'br':
+      t = `
       align-items: flex-end;
       justify-content: flex-start;
     `
-    break
-  case 'bs':
-    t = `
+      break
+    case 'bs':
+      t = `
       align-items: stretch;
       justify-content: flex-start;
     `
-    break
-  case 'sl':
-    t = `
+      break
+    case 'sl':
+      t = `
       align-items: flex-start;
       justify-content: space-between;
     `
-    break
-  case 'sc':
-    t = `
+      break
+    case 'sc':
+      t = `
       align-items: center;
       justify-content: space-between;
     `
-    break
-  case 'sr':
-    t = `
+      break
+    case 'sr':
+      t = `
       align-items: flex-end;
       justify-content: space-between;
     `
-    break
-  case 'ss':
-    t = `
+      break
+    case 'ss':
+      t = `
       align-items: stretch;
       justify-content: space-between;
     `
-    break
-  default:
-    t = `
+      break
+    default:
+      t = `
       align-items: center;
       justify-content: center;
     `
