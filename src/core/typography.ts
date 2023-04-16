@@ -1,5 +1,5 @@
 import { FontDisplay, FontStyle, FontVariant, FontFormat, FontWeight, LetterSpacing, LineHeight } from '../types'
-import minify from '../utils/minify'
+import format from '../utils/format'
 
 /**
  * All supported font weights.
@@ -160,7 +160,7 @@ export function getFontWeightFromPath(path: string): FontWeight {
  * ```
  */
 export function fontFace(family: string, src: string, weight?: FontWeight, style?: FontStyle, display?: FontDisplay): string {
-  return minify(`
+  return format(`
     @font-face {
       font-family: ${family};
       src: url('${src}') format('${getFontFormatFromPath(src)}');
@@ -206,7 +206,7 @@ export function fontFace(family: string, src: string, weight?: FontWeight, style
  * ```
  */
 export function font(family: string, size: string | number = '1.6rem', weight: FontWeight = fontWeights.normal, style: FontStyle = 'normal', lineHeight: LineHeight = 'normal', letterSpacing: LetterSpacing = 'normal', variant: FontVariant = 'normal'): string {
-  return minify(`
+  return format(`
     font-family: ${family || 'sans-serif'};
     font-size: ${typeof size === 'number' ? `${size}rem` : size};
     font-style: ${style};

@@ -2,13 +2,13 @@
 
 import csstree from 'css-tree'
 import { describe, it } from 'mocha'
-import { align } from '..'
+import * as container from './container'
 
-describe('align', () => {
-  for (const k in align) {
-    if (!align.hasOwnProperty(k)) continue
+describe('classes/container', () => {
+  for (const k in container) {
+    if (!container.hasOwnProperty(k)) continue
 
-    const p = (align as any)[k]
+    const p = (container as any)[k]
 
     if (typeof p === 'string') {
       it(k, () => {

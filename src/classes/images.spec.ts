@@ -2,9 +2,9 @@
 
 import csstree from 'css-tree'
 import { describe, it } from 'mocha'
-import { images } from '..'
+import * as images from './images'
 
-describe('images', () => {
+describe('classes/images', () => {
   for (const k in images) {
     if (!images.hasOwnProperty(k)) continue
 

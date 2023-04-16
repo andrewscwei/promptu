@@ -22,7 +22,7 @@ jobs:
     with:
       branch-name: gh-pages
       deploy-path: .gh-pages
-      run-command: npm run pages
+      run-command: npm run docs
   notify:
     name: Notify
     needs: [deploy, docs]

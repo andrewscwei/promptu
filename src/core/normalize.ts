@@ -1,4 +1,4 @@
-import minify from '../utils/minify'
+import format from '../utils/format'
 
 /**
  * Normalizes CSS consistently across all major browsers.
@@ -6,7 +6,7 @@ import minify from '../utils/minify'
  * @see https://github.com/andrewscwei/promptu/blob/master/src/core/normalize.ts
  */
 export default function(): string {
-  return minify(`
+  return `
     html {
       font-family: sans-serif;
       font-size: 10px;
@@ -408,5 +408,5 @@ export default function(): string {
     html:not(.supports-no-cookies) .supports-no-cookies {
       display: none !important;
     }
-  `)
+  `
 }

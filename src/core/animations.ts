@@ -1,4 +1,4 @@
-import minify from '../utils/minify'
+import format from '../utils/format'
 import { toCSSProperty } from './utils'
 
 /**
@@ -12,7 +12,7 @@ import { toCSSProperty } from './utils'
  * @returns CSS string.
  */
 export function transition(property: string | string[], duration: number | string | (number | string)[], timingFunction: string | string[] = 'linear', delay: number | string | (number | string)[] = 0): string {
-  return minify(`
+  return format(`
     transition-property: ${toCSSProperty(property)};
     transition-duration: ${toCSSProperty(duration, 'ms')};
     transition-timing-function: ${toCSSProperty(timingFunction)};

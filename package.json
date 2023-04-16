@@ -1,12 +1,12 @@
 {
   "name": "promptu",
-  "version": "5.12.0",
+  "version": "6.0.0",
   "description": "Micro CSS-in-JS library",
   "main": "build/index.js",
   "scripts": {
     "clean": "rimraf build lib",
-    "pages": "rimraf .gh-pages && typedoc --excludeExternals --hideGenerator --darkHighlightTheme dark-plus --name Promptu --includeVersion --out ./.gh-pages ./src && touch ./.gh-pages/.nojekyll",
-    "build": "npm run clean && webpack --config config/build.conf.ts && ts-node scripts/generateNormalizeCSS",
+    "docs": "rimraf .gh-pages && typedoc --excludeExternals --hideGenerator --darkHighlightTheme dark-plus --name Promptu --includeVersion --out ./.gh-pages ./src && touch ./.gh-pages/.nojekyll",
+    "build": "npm run clean && webpack --config config/build.conf.ts && ts-node scripts/generateCSS",
     "test": "mocha -r ts-node/register -b -c --extension spec.ts --recursive --exit \"src/$npm_config_files\"",
     "lint": "eslint --ext .ts config/ src/",
     "lint:fix": "npm run lint -- --fix"
@@ -44,7 +44,7 @@
     "rimraf": "^5.0.0",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.24.2",
+    "typedoc": "^0.24.4",
     "typescript": "^5.0.4",
     "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1"
