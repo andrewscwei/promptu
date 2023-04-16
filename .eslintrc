@@ -91,7 +91,7 @@
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        "selector" : [
+        "selector": [
           "enumMember"
         ],
         "format": [
