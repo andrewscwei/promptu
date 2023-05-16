@@ -1,5 +1,3 @@
-import format from '../utils/format'
-
 /**
  * Normalizes CSS consistently across all major browsers.
  *
@@ -49,7 +47,8 @@ export default function(): string {
     input,
     optgroup,
     select,
-    textarea {
+    textarea,
+    [type='button'] {
       border-radius: 0;
       border: none;
       box-sizing: border-box;
@@ -123,21 +122,16 @@ export default function(): string {
       pointer-events: none;
     }
 
-    a[type='button'] {
+    [type='button'] {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
-      border: none;
-      box-sizing: border-box;
       cursor: pointer;
       display: inline-block;
       font-weight: normal;
       line-height: normal;
-      margin: 0;
-      outline: none;
       overflow: visible;
-      padding: 0;
       position: relative;
       text-decoration: none;
       text-rendering: optimizeLegibility;
@@ -145,13 +139,13 @@ export default function(): string {
       text-transform: none;
     }
 
-    a[type='button']::-moz-focus-inner {
+    [type='button']::-moz-focus-inner {
       border: 0;
       padding: 0;
     }
 
-    a[type='button']:disabled,
-    a[type='button'][disabled] {
+    [type='button']:disabled,
+    [type='button'][disabled] {
       cursor: default;
       pointer-events: none;
     }
@@ -223,15 +217,10 @@ export default function(): string {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke: 0;
       appearance: none;
-      border-radius: 0;
-      border: none;
       box-shadow: none;
       box-sizing: border-box;
       font-weight: normal;
       line-height: normal;
-      margin: 0;
-      outline: none;
-      padding: 0;
       resize: none;
       text-decoration: none;
       text-rendering: optimizeLegibility;
@@ -339,8 +328,10 @@ export default function(): string {
     }
 
     hr {
+      border: none;
       box-sizing: content-box;
       height: 0;
+      margin: 0;
     }
 
     pre {
