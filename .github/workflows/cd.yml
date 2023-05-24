@@ -13,7 +13,7 @@ jobs:
     uses: andrewscwei/workflows/.github/workflows/npm-deploy.yml@master
     with:
       create-release: true
-      run-command: npm run build
+      predeploy-command: npm run build
     secrets:
       npm-auth-token: ${{ secrets.NPM_AUTH }}
   docs:
@@ -22,7 +22,7 @@ jobs:
     with:
       branch-name: gh-pages
       deploy-path: .gh-pages
-      run-command: npm run docs
+      predeploy-command: npm run docs
   notify:
     name: Notify
     needs: [deploy, docs]
